@@ -1,0 +1,19 @@
+cmd
+path=%path%;C:\Program Files\qemu
+
+qemu-img info DOSBOOT.img
+image: DOSBOOT.img
+file format: raw
+virtual size: 1.4M (1474560 bytes)
+disk size: 1.4M
+
+从软盘启动，加载光盘，使用硬盘。
+qemu-system-i386  -fda DOSBOOT.img -hda myimage.img -cdrom cd.iso -boot order=a
+
+sys c:
+qemu-system-i386  -hda myimage.img
+qemu-system-i386  -fda DOSBOOT.img -hda myimage.img -cdrom cd.iso
+
+创建磁盘
+qemu-img create myimage.img 500M
+Formatting 'myimage.img', fmt=raw size=524288000
