@@ -60,7 +60,7 @@ msdos/
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
-├── ucdos-7.0-wps-cced-6.0-setup.iso       # UCDOS 7.0 (with WPS) + CCED 6.0
+├── UCDOS-7.0-WPS-CCED-6.0-setup.iso   # UCDOS 7.0 (with WPS) + CCED 6.0
 ```
 
 ---
@@ -120,7 +120,7 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 |------|-------------|
 | `windows-1.0-setup-disk.zip` | Microsoft Windows 1.0 (1985) — the first GUI OS |
 | `chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
-| `ucdos-7.0-wps-cced-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
+| `UCDOS-7.0-WPS-CCED-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
 
 ### Original Source Code
 
