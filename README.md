@@ -28,9 +28,9 @@ This repository is a curated collection of **MS-DOS resources**, including:
 msdos/
 ├── README.md                          # This file
 ├── DOS622.GHO                         # MS-DOS 6.22 Ghost disk image
-├── MS-DOS VMWare虚拟机5.5.zip  # Pre-configured VMware VM
-├── MS-DOS6.0 源代码.zip         # MS-DOS 6.0 source code (educational)
-├── pwin32.zip     # Chinese version of Windows 3.2
+├── MS-DOS_VMware_5.5.zip              # Pre-configured VMware VM
+├── MS-DOS_6.0_Source_Code.zip         # MS-DOS 6.0 source code (educational)
+├── PWIN32_Chinese_Windows_3.2.zip     # Chinese version of Windows 3.2
 ├── Windows_1.0.rar                    # Windows 1.0 (historical)
 │
 ├── boot_disk/                         # Boot disk image collection
@@ -64,7 +64,7 @@ msdos/
 
 ### Option 1: VMware Workstation (Recommended)
 
-1. Extract `MS-DOS VMWare虚拟机5.5.zip`
+1. Extract `MS-DOS_VMware_5.5.zip`
 2. Open the `.vmx` file with VMware Workstation 5.x or later
 3. Power on the virtual machine
 4. You're in MS-DOS!
