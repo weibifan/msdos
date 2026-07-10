@@ -28,7 +28,6 @@ This repository is a curated collection of **MS-DOS resources**, including:
 msdos/
 ├── README.md                          # This file
 ├── ms-dos-622.gho                     # MS-DOS 6.22 Ghost disk image
-├── ms-dos-622.img                     # MS-DOS 6.22 boot disk image
 ├── ms-dos-in-vmware/                  # Pre-configured VMware VM
 │   ├── ms-dos-vmware-5.5.zip          #   Compressed VM package
 │   └── README.md                      #   VMware setup guide
