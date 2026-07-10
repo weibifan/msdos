@@ -27,34 +27,37 @@ This repository is a curated collection of **MS-DOS resources**, including:
 ```
 msdos/
 ├── README.md                          # This file
-├── DOS622.GHO                         # MS-DOS 6.22 Ghost disk image
-├── MS-DOS_VMware_5.5.zip              # Pre-configured VMware VM
-├── MS-DOS_6.0_Source_Code.zip         # MS-DOS 6.0 source code (educational)
-├── PWIN32_Chinese_Windows_3.2.zip     # Chinese version of Windows 3.2
-├── Windows_1.0.rar                    # Windows 1.0 (historical)
+├── ms-dos-622.gho                     # MS-DOS 6.22 Ghost disk image
+├── ms-dos-in-vmware/                  # Pre-configured VMware VM
+│   ├── ms-dos-vmware-5.5.zip          #   Compressed VM package
+│   └── README.md                      #   VMware setup guide
+├── ms-dos-6.0-source-code.zip         # MS-DOS 6.0 source code (educational)
+├── chinese-windows-3.2-setup-disk.zip  # Chinese version of Windows 3.2
+├── windows-1.0-setup-disk.zip          # Windows 1.0 (installation disk)
 │
-├── boot_disk/                         # Boot disk image collection
-│   ├── DOS622.IMG                     #   MS-DOS 6.22 boot disk
-│   ├── DOSBOOT.img                    #   Generic DOS boot disk
-│   ├── DOSRESCU.IMG                   #   DOS rescue disk
-│   ├── RESCUE.IMG                     #   Rescue utility disk
-│   ├── UNIX.img                       #   UNIX boot disk
-│   ├── WIN95.img                      #   Windows 95 startup disk
-│   ├── WIN97.img                      #   Windows 97 (OEM) startup disk
-│   ├── WIN98.IMG                      #   Windows 98 startup disk
-│   ├── WIN98SE.IMG                    #   Windows 98 SE startup disk
-│   ├── HD.EXE                         #   Raw disk image writer
-│   ├── UNDISK.EXE                     #   Disk image extraction tool
-│   └── UNDISKP.EXE                   #   UNDISK (protected mode)
+├── boot-disk/                         # Boot disk image collection
+│   ├── ms-dos-622.img                 #   MS-DOS 6.22 boot disk
+│   ├── ms-dos-boot.img                #   Generic DOS boot disk
+│   ├── ms-dos-rescue.img              #   DOS rescue disk
+│   ├── rescue.img                     #   Rescue utility disk
+│   ├── unix.img                       #   UNIX boot disk
+│   ├── win95.img                      #   Windows 95 startup disk
+│   ├── win97.img                      #   Windows 97 (OEM) startup disk
+│   ├── win98.img                      #   Windows 98 startup disk
+│   ├── win98se.img                    #   Windows 98 SE startup disk
+│   ├── hd.exe                         #   Raw disk image writer
+│   ├── undisk.exe                     #   Disk image extraction tool
+│   ├── undiskp.exe                    #   UNDISK (protected mode)
+│   └── README.md                      #   Boot disk documentation
 │
-├── msdos7/                            # MS-DOS 7.1 (final DOS release)
-│   ├── dos71_1.zip                    #   Disk 1
-│   ├── dos71_2.zip                    #   Disk 2
-│   └── msdos71b.zip                   #   MS-DOS 7.1 beta
+├── ms-dos-7.10/                        # MS-DOS 7.1 (final DOS release)
+│   ├── ms-dos-71-disk1.zip             #   Disk 1
+│   ├── ms-dos-71-disk2.zip             #   Disk 2
+│   └── ms-dos-71-boot.zip              #   Boot disk
 │
-└── QEMU/                              # QEMU virtual machine setup
+└── ms-dos-in-qemu/                              # QEMU virtual machine setup
     ├── myimage.zip                    #   Pre-built QEMU disk image
-    ├── qemu_screenshot.png            #   Screenshot of QEMU running DOS
+    ├── qemu-screenshot.png            #   Screenshot of QEMU running DOS
     └── README.md                      #   QEMU setup guide
 ```
 
@@ -64,14 +67,14 @@ msdos/
 
 ### Option 1: VMware Workstation (Recommended)
 
-1. Extract `MS-DOS_VMware_5.5.zip`
+1. Extract `ms-dos-in-vmware/ms-dos-vmware-5.5.zip`
 2. Open the `.vmx` file with VMware Workstation 5.x or later
 3. Power on the virtual machine
 4. You're in MS-DOS!
 
 ### Option 2: QEMU (Lightweight)
 
-See the [QEMU guide](QEMU/README.md) for detailed setup instructions.
+See the [QEMU guide](ms-dos-in-qemu/README.md) for detailed setup instructions.
 
 ```bash
 # Quick start (after extracting the image)
@@ -80,14 +83,14 @@ qemu-system-x86_64 -m 64 -drive file=myimage.img,format=raw
 
 ### Option 3: Physical Machine / Real Hardware
 
-Use the boot disk images in `boot_disk/`:
+Use the boot disk images in `boot-disk/`:
 
 ```bash
 # Write a boot disk image to a floppy disk (requires a floppy drive)
-hd.exe DOS622.IMG
+hd.exe ms-dos-622.img
 ```
 
-Or extract the Ghost image `DOS622.GHO` to a hard disk partition using Norton Ghost.
+Or extract the Ghost image `ms-dos-622.gho` to a hard disk partition using Norton Ghost.
 
 ---
 
@@ -95,10 +98,10 @@ Or extract the Ghost image `DOS622.GHO` to a hard disk partition using Norton Gh
 
 | Tool | Description |
 |------|-------------|
-| **HD.EXE** | Write raw disk images to floppy drives |
-| **UNDISK.EXE** | Extract disk image files |
-| **UNDISKP.EXE** | UNDISK protected-mode variant |
-| **Norton Ghost** | System imaging and restore (via DOS622.GHO) |
+| **hd.exe** | Write raw disk images to floppy drives |
+| **undisk.exe** | Extract disk image files |
+| **undiskp.exe** | UNDISK protected-mode variant |
+| **Norton Ghost** | System imaging and restore (via ms-dos-622.gho) |
 
 ---
 
