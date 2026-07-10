@@ -59,7 +59,8 @@ msdos/
 │
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
-└── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
+├── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
+├── ucdos-7.0-wps-cced-6.0-setup.iso       # UCDOS 7.0 (with WPS) + CCED 6.0
 ```
 
 ---
@@ -113,12 +114,13 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | **QEMU 1.2** | `ms-dos-in-qemu/` | Lightweight emulation, 64 MB RAM, 200 MB disk |
 | **VMware 5.5** | `ms-dos-in-vmware/` | Pre-configured VM with VGA, floppy support |
 
-### Retro Windows
+### Retro Windows & Chinese DOS Software
 
 | File | Description |
 |------|-------------|
 | `windows-1.0-setup-disk.zip` | Microsoft Windows 1.0 (1985) — the first GUI OS |
 | `chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
+| `ucdos-7.0-wps-cced-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
 
 ### Original Source Code
 
@@ -133,6 +135,24 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | **hd.exe** | Write raw disk images to floppy drives |
 | **undisk.exe** | Extract/capture disk image files |
 | **undiskp.exe** | UNDISK protected-mode variant |
+
+---
+
+## 🖥️ Classic 1996 PC Configuration
+
+A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Windows 3.2, and early Windows 9x:
+
+| Component | Specification |
+|-----------|---------------|
+| **CPU** | Intel 80486 DX2 — 66 MHz |
+| **RAM** | 8 MB |
+| **Storage** | 512 MB HDD |
+| **Graphics** | S3 Graphics Adapter with 1 MB VRAM (640×480 high color under Windows 3.2) |
+| **Floppy** | 3.5-inch floppy drive × 1 |
+| **CD-ROM** | 2× or 4× CD-ROM drive |
+| **Sound** | Sound Blaster 16 |
+| **Mouse** | Microsoft-compatible serial mouse |
+| **Network** | NE2000 compatible (added later) |
 
 ---
 
