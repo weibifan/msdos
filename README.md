@@ -60,7 +60,18 @@ msdos/
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
-├── UCDOS-7.0-WPS-CCED-6.0-setup.iso   # UCDOS 7.0 (with WPS) + CCED 6.0
+├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
+│
+├── Turbo C 2.01 (5.25-360k)/              # Turbo C 2.01 development environment
+│   ├── Disk1 - Install - Help.img         #   Installation & help (360KB)
+│   ├── Disk2 - Integrated Development Environment.img  #   IDE
+│   ├── Disk3 - Command Line - Utilities.img #   Command line tools
+│   ├── Disk4 - Libraries.img              #   Libraries
+│   ├── Disk5 - Header Files - Libraries.img #   Header files
+│   └── Disk6 - Examples - BGI - Misc.img  #   Examples & graphics
+│
+└── Turbo C++ 3.0/                         # Turbo C++ 3.0 development environment
+    └── Turbo C++ 3.0.zip                  #   Complete package
 ```
 
 ---
@@ -121,6 +132,13 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | `windows-1.0-setup-disk.zip` | Microsoft Windows 1.0 (1985) — the first GUI OS |
 | `chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
 | `UCDOS-7.0-WPS-CCED-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
+
+### Turbo C / C++ Development Tools
+
+| Directory | Description |
+|-----------|-------------|
+| `Turbo C 2.01 (5.25-360k)/` | 6 disk images (360 KB each) of Turbo C 2.01 — the classic MS-DOS C compiler by Borland |
+| `Turbo C++ 3.0/` | Complete Turbo C++ 3.0 package — Borland's object-oriented C++ IDE for DOS |
 
 ### Original Source Code
 
