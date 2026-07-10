@@ -27,6 +27,7 @@ This repository is a curated collection of **MS-DOS resources**, including:
 msdos/
 ├── README.md                              # This file
 ├── ms-dos-622.gho                         # MS-DOS 6.22 Ghost system image
+├── Ghost60.exe                            # Norton Ghost 6.0 (disk imaging tool)
 │
 ├── boot-disk/                             # Boot disk image collection
 │   ├── README.md                          #   Documentation
@@ -150,6 +151,7 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 
 | Tool | Description |
 |------|-------------|
+| **Ghost60.exe** | Norton Ghost 6.0 — system disk imaging and cloning |
 | **hd.exe** | Write raw disk images to floppy drives |
 | **undisk.exe** | Extract/capture disk image files |
 | **undiskp.exe** | UNDISK protected-mode variant |
@@ -191,6 +193,8 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 
 - [MS-DOS History](https://en.wikipedia.org/wiki/MS-DOS)
 - [MS-DOS 6.22 Technical Reference](https://archive.org/details/msdos622)
+- [DOS资源站 CN-DOS.net](https://www.cn-dos.net/) — Chinese DOS community and resource archive
+- [老操作系统集锦](http://www.regexlab.com/sswater/zh/oldos.htm) — Retro OS collection
 - [QEMU Documentation](https://www.qemu.org/documentation/)
 - [FreeDOS](https://www.freedos.org/) — Modern free DOS alternative
 
