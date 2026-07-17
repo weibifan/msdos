@@ -1,3 +1,8 @@
+<p align="center">
+  <a href="README.md"><img alt="English" height="30" src="https://img.shields.io/badge/English-3593D2?style=for-the-badge"></a>&nbsp;
+  <a href="README.zh-CN.md"><img alt="简体中文" height="30" src="https://img.shields.io/badge/简体中文-7CB342?style=for-the-badge"></a>
+</p>
+
 # MS-DOS 经典收藏集 🖥️
 
 > 保存个人计算的基础——MS-DOS 环境、工具、启动盘和历史资源。
