@@ -50,6 +50,8 @@ msdos/
 │   └── undiskp.exe                        #   UNDISK (protected mode)
 │
 ├── tools/                                 # DOS utility tools
+│   ├── ARJ.EXE                            #   ARJ v2.50 archiver
+│   ├── pkzip250.exe                       #   PKZIP v2.50 archiver
 │   ├── pct9.zip                           #   PC Tools 9.0 utility suite
 │   ├── sea13.zip                          #   Sea v1.3 image viewer
 │   └── README.md                          #   Documentation
