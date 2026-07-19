@@ -54,6 +54,11 @@ msdos/
 │   ├── sea13.zip                          #   Sea v1.3 图像查看器
 │   └── README.md                          #   说明文档
 │
+├── games/                                 # 经典 DOS 游戏
+│   ├── doom.zip                           #   DOOM（1993, id Software）
+│   ├── Command & Conquer.zip              #   命令与征服（1995, Westwood Studios）
+│   └── README.md                          #   说明文档
+│
 ├── ms-dos-7.10/                           # MS-DOS 7.1（最终版 DOS）
 │   ├── ms-dos-71-disk1.zip                #   安装盘 1
 │   ├── ms-dos-71-disk2.zip                #   安装盘 2

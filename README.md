@@ -54,6 +54,11 @@ msdos/
 │   ├── sea13.zip                          #   Sea v1.3 image viewer
 │   └── README.md                          #   Documentation
 │
+├── games/                                 # Classic DOS games
+│   ├── doom.zip                           #   DOOM (1993, id Software)
+│   ├── Command & Conquer.zip              #   C&C (1995, Westwood Studios)
+│   └── README.md                          #   Documentation
+│
 ├── ms-dos-7.10/                           # MS-DOS 7.1 (final DOS release)
 │   ├── ms-dos-71-disk1.zip                #   Installation disk 1
 │   ├── ms-dos-71-disk2.zip                #   Installation disk 2
