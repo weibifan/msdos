@@ -20,6 +20,7 @@ A collection of bootable disk images for MS-DOS and Windows 9x era systems.
 
 | File | Description |
 |------|-------------|
+| `pct9.zip` | PC Tools 9.0 — comprehensive DOS utility suite by Central Point Software. Includes file manager (PC Shell), disk editor (DiskEdit), recovery tools (Undelete, Unformat), disk diagnostic (DiskFix), system optimization (SI Pro, Compress), and more. |
 | `hd-copy.exe` | HD-COPY v2.3R — fast floppy disk copier/imager by Oliver Fromme (TBH-Softworx, Cardware). Copies floppy on the fly or via .IMG files. Supports non-standard formats (up to 1.764 MB), fast formatting, drive cleaning, virus removal, and bad sector repair. Text-mode UI with mouse/keyboard support. |
 | `undisk.exe` | UNDISK v1.6 — disk image extractor by Zhihong Feng. Extracts files from various floppy image formats (HD-COPY, DiskDupe, IMG, etc.). |
 | `undiskp.exe` | UNDISKP v1.95 — enhanced version with long filename support and support for more image formats (HD-COPY, CopyQM, DiskDupe, XDFCOPY, etc.). |
