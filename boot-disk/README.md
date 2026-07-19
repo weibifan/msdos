@@ -20,16 +20,16 @@ A collection of bootable disk images for MS-DOS and Windows 9x era systems.
 
 | File | Description |
 |------|-------------|
-| `hd.exe` | Write disk images directly to floppy drives |
-| `undisk.exe` | Extract/capture disk image files |
-| `undiskp.exe` | UNDISK variant for protected mode |
+| `hd-copy.exe` | HD-COPY v2.3R — fast floppy disk copier/imager by Oliver Fromme (TBH-Softworx, Cardware). Copies floppy on the fly or via .IMG files. Supports non-standard formats (up to 1.764 MB), fast formatting, drive cleaning, virus removal, and bad sector repair. Text-mode UI with mouse/keyboard support. |
+| `undisk.exe` | UNDISK v1.6 — disk image extractor by Zhihong Feng. Extracts files from various floppy image formats (HD-COPY, DiskDupe, IMG, etc.). |
+| `undiskp.exe` | UNDISKP v1.95 — enhanced version with long filename support and support for more image formats (HD-COPY, CopyQM, DiskDupe, XDFCOPY, etc.). |
 
 ## Usage
 
 **Write an image to a real floppy disk:**
 
 ```bash
-hd.exe dos622.img
+hd-copy.exe dos622.img
 ```
 
 **Extract an existing floppy to an image file:**
