@@ -49,6 +49,11 @@ msdos/
 │   ├── undisk.exe                         #   磁盘镜像提取工具
 │   └── undiskp.exe                        #   UNDISK（保护模式）
 │
+├── tools/                                 # DOS 实用工具
+│   ├── pct9.zip                           #   PC Tools 9.0 工具套件
+│   ├── sea13.zip                          #   Sea v1.3 图像查看器
+│   └── README.md                          #   说明文档
+│
 ├── ms-dos-7.10/                           # MS-DOS 7.1（最终版 DOS）
 │   ├── ms-dos-71-disk1.zip                #   安装盘 1
 │   ├── ms-dos-71-disk2.zip                #   安装盘 2
