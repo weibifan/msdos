@@ -45,7 +45,7 @@ msdos/
 │   ├── win97.img                          #   Windows 97 (OEM) startup disk
 │   ├── win98.img                          #   Windows 98 startup disk
 │   ├── win98se.img                        #   Windows 98 SE startup disk
-│   ├── hd.exe                             #   Raw disk image writer
+│   ├── hd-copy.exe                        #   HD-COPY v2.3R — floppy disk copier/imager
 │   ├── undisk.exe                         #   Disk image extraction tool
 │   └── undiskp.exe                        #   UNDISK (protected mode)
 │
@@ -105,7 +105,7 @@ See the [QEMU guide](ms-dos-in-qemu/README.md) for details.
 Use a boot disk image with a floppy drive:
 
 ```bash
-hd.exe boot-disk/ms-dos-622.img
+hd-copy.exe boot-disk/ms-dos-622.img
 ```
 
 Or deploy the Ghost image `ms-dos-622.gho` using Norton Ghost.
@@ -157,7 +157,7 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | Tool | Description |
 |------|-------------|
 | **Ghost60.exe** | Norton Ghost 6.0 — system disk imaging and cloning |
-| **hd.exe** | Write raw disk images to floppy drives |
+| **hd-copy.exe** | HD-COPY v2.3R — fast floppy disk copier/imager (Oliver Fromme, Cardware) |
 | **undisk.exe** | Extract/capture disk image files |
 | **undiskp.exe** | UNDISK protected-mode variant |
 

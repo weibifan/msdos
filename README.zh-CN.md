@@ -45,7 +45,7 @@ msdos/
 │   ├── win97.img                          #   Windows 97（OEM）启动盘
 │   ├── win98.img                          #   Windows 98 启动盘
 │   ├── win98se.img                        #   Windows 98 SE 启动盘
-│   ├── hd.exe                             #   原始磁盘镜像写入工具
+│   ├── hd-copy.exe                        #   HD-COPY v2.3R — 软盘复制/映像工具
 │   ├── undisk.exe                         #   磁盘镜像提取工具
 │   └── undiskp.exe                        #   UNDISK（保护模式）
 │
@@ -105,7 +105,7 @@ qemu-system-x86_64 -m 64 -drive file=myimage.img,format=raw
 使用启动盘镜像配合软驱：
 
 ```bash
-hd.exe boot-disk/ms-dos-622.img
+hd-copy.exe boot-disk/ms-dos-622.img
 ```
 
 或使用 Norton Ghost 部署 Ghost 镜像 `ms-dos-622.gho`。
@@ -157,7 +157,7 @@ hd.exe boot-disk/ms-dos-622.img
 | 工具 | 说明 |
 |------|-------------|
 | **Ghost60.exe** | Norton Ghost 6.0 — 系统磁盘镜像与克隆 |
-| **hd.exe** | 将原始磁盘镜像写入软驱 |
+| **hd-copy.exe** | HD-COPY v2.3R — 快速软盘复制/映像工具（Oliver Fromme, Cardware） |
 | **undisk.exe** | 提取/捕获磁盘镜像文件 |
 | **undiskp.exe** | UNDISK 保护模式版本 |
 
