@@ -6,14 +6,9 @@ A collection of bootable disk images for MS-DOS and Windows 9x era systems.
 
 | File | Content | Purpose |
 |------|---------|---------|
-| `dos622.img` | MS-DOS 6.22 | Standard DOS boot disk |
-| `dosboot.img` | Generic DOS | Boot disk for various DOS versions |
-| `dosrescu.img` | DOS Rescue | System rescue and recovery |
-| `rescue.img` | Rescue utils | Utility disk with recovery tools |
-| `unix.img` | UNIX boot | UNIX boot disk |
+| `ms-dos-622.img` | MS-DOS 6.22 | Standard DOS boot disk |
+| `ms-dos-rescue.img` | DOS Rescue | System rescue and recovery |
 | `win95.img` | Windows 95 | Windows 95 startup disk |
-| `win97.img` | Windows 97 OEM | Windows 97 (OEM) startup disk |
-| `win98.img` | Windows 98 | Windows 98 startup disk |
 | `win98se.img` | Windows 98 SE | Windows 98 Second Edition startup disk |
 
 ## Tools

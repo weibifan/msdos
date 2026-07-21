@@ -37,13 +37,8 @@ msdos/
 ├── boot-disk/                             # 启动盘镜像合集
 │   ├── README.md                          #   说明文档
 │   ├── ms-dos-622.img                     #   MS-DOS 6.22 启动盘
-│   ├── ms-dos-boot.img                    #   通用 DOS 启动盘
 │   ├── ms-dos-rescue.img                  #   DOS 救援盘
-│   ├── rescue.img                         #   含恢复工具的实用盘
-│   ├── unix.img                           #   UNIX 启动盘
 │   ├── win95.img                          #   Windows 95 启动盘
-│   ├── win97.img                          #   Windows 97（OEM）启动盘
-│   ├── win98.img                          #   Windows 98 启动盘
 │   ├── win98se.img                        #   Windows 98 SE 启动盘
 │   ├── hd-copy.exe                        #   HD-COPY v2.3R — 软盘复制/映像工具
 │   ├── undisk.exe                         #   磁盘镜像提取工具
@@ -54,6 +49,7 @@ msdos/
 │   ├── pkzip250.exe                       #   PKZIP v2.50 压缩工具
 │   ├── pct9.zip                           #   PC Tools 9.0 工具套件
 │   ├── sea13.zip                          #   Sea v1.3 图像查看器
+│   ├── TT/                                #   Typing Tutor IV — 打字教学程序
 │   └── README.md                          #   说明文档
 │
 ├── games/                                 # 经典 DOS 游戏
@@ -112,7 +108,22 @@ qemu-system-x86_64 -m 64 -drive file=myimage.img,format=raw
 2. 用 **VMware Workstation 5.x** 或更高版本打开 `.vmx` 文件
 3. 开机运行
 
-### 方式三：物理机 / 真实硬件
+### 方式三：DOSBox（跨平台）
+
+```bash
+mount c .
+c:
+boot-disk\ms-dos-622.img
+```
+
+或在 DOSBox 中运行：
+
+```bash
+imgmount a boot-disk/ms-dos-622.img -t floppy
+boot a:
+```
+
+### 方式四：物理机 / 真实硬件
 
 使用启动盘镜像配合软驱：
 
@@ -210,6 +221,7 @@ hd-copy.exe boot-disk/ms-dos-622.img
 
 - [MS-DOS 历史](https://en.wikipedia.org/wiki/MS-DOS)
 - [MS-DOS 6.22 技术参考](https://archive.org/details/msdos622)
+- [DOSBox](https://www.dosbox.com/) — DOS 模拟器，在现代系统上运行 DOS 应用程序
 - [DOS资源站 CN-DOS.net](https://www.cn-dos.net/) — 中文 DOS 社区与资源存档
 - [老操作系统集锦](http://www.regexlab.com/sswater/zh/oldos.htm) — 复古操作系统收藏
 - [QEMU 文档](https://www.qemu.org/documentation/)

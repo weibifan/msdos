@@ -37,13 +37,8 @@ msdos/
 ├── boot-disk/                             # Boot disk image collection
 │   ├── README.md                          #   Documentation
 │   ├── ms-dos-622.img                     #   MS-DOS 6.22 boot disk
-│   ├── ms-dos-boot.img                    #   Generic DOS boot disk
 │   ├── ms-dos-rescue.img                  #   DOS rescue disk
-│   ├── rescue.img                         #   Utility disk with recovery tools
-│   ├── unix.img                           #   UNIX boot disk
 │   ├── win95.img                          #   Windows 95 startup disk
-│   ├── win97.img                          #   Windows 97 (OEM) startup disk
-│   ├── win98.img                          #   Windows 98 startup disk
 │   ├── win98se.img                        #   Windows 98 SE startup disk
 │   ├── hd-copy.exe                        #   HD-COPY v2.3R — floppy disk copier/imager
 │   ├── undisk.exe                         #   Disk image extraction tool
@@ -54,6 +49,7 @@ msdos/
 │   ├── pkzip250.exe                       #   PKZIP v2.50 archiver
 │   ├── pct9.zip                           #   PC Tools 9.0 utility suite
 │   ├── sea13.zip                          #   Sea v1.3 image viewer
+│   ├── TT/                                #   Typing Tutor IV — typing tutor program
 │   └── README.md                          #   Documentation
 │
 ├── games/                                 # Classic DOS games
@@ -112,7 +108,22 @@ See the [QEMU guide](ms-dos-in-qemu/README.md) for details.
 2. Open the `.vmx` file with **VMware Workstation 5.x** or later
 3. Power on
 
-### Option 3: Physical Machine / Real Hardware
+### Option 3: DOSBox (Cross-Platform)
+
+```bash
+mount c .
+c:
+boot-disk\ms-dos-622.img
+```
+
+Or run from within DOSBox:
+
+```bash
+imgmount a boot-disk/ms-dos-622.img -t floppy
+boot a:
+```
+
+### Option 4: Physical Machine / Real Hardware
 
 Use a boot disk image with a floppy drive:
 
@@ -210,6 +221,7 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 
 - [MS-DOS History](https://en.wikipedia.org/wiki/MS-DOS)
 - [MS-DOS 6.22 Technical Reference](https://archive.org/details/msdos622)
+- [DOSBox](https://www.dosbox.com/) — DOS emulator for running DOS applications on modern systems
 - [DOS资源站 CN-DOS.net](https://www.cn-dos.net/) — Chinese DOS community and resource archive
 - [老操作系统集锦](http://www.regexlab.com/sswater/zh/oldos.htm) — Retro OS collection
 - [QEMU Documentation](https://www.qemu.org/documentation/)
