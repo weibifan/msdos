@@ -78,11 +78,12 @@ msdos/
 │
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
-├── web-demo/                                # Online DOS demo (js-dos)
+├── web-demo/                                # Online DOS demo (js-dos v8)
+│   ├── README.md                           #   Documentation
 │   ├── index.html                          #   Typing Tutor IV in browser
-│   ├── TT.EXE                              #   Typing Tutor IV program
-│   ├── TT.HLP                              #   Help file
-│   └── TT.HIS                              #   History/scores
+│   ├── tt-bundle.zip                       #   DOS bundle (TT + help + history)
+│   ├── TT.EXE / TT.HLP / TT.HIS            #   Typing Tutor IV program files
+│   └── AUTOEXEC.BAT                        #   Auto-start script
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
 │
 ├── c and c++/                              # C/C++ development tools
