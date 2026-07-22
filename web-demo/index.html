@@ -113,25 +113,14 @@
             statusEl.textContent = msg;
         }
 
-        setStatus('Loading DOSBox…');
+        setStatus('Starting DOSBox…');
 
-        try {
-            Dos(container, {
-                url: 'tt-bundle.jsdos',
-                onEvent: (event, ci) => {
-                    if (event === 'emulator-ready') {
-                        setStatus('Running Typing Tutor IV…');
-                    } else if (event === 'ci-ready') {
-                        setStatus('Ready');
-                    } else if (event === 'emulator-error') {
-                        setStatus('⚠️ Error');
-                        console.error('js-dos error:', ci);
-                    }
-                },
-            });
-        } catch (e) {
-            setStatus('⚠️ ' + e.message);
-        }
+        Dos(container).run('tt-bundle.jsdos').then(() => {
+            setStatus('Running Typing Tutor IV…');
+        }).catch(e => {
+            setStatus('⚠️ Error: ' + (e.message || 'unknown'));
+            console.error(e);
+        });
     </script>
 </body>
 </html>
