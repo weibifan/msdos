@@ -113,14 +113,42 @@
             statusEl.textContent = msg;
         }
 
-        setStatus('Starting DOSBox…');
+        async function start() {
+            const base = window.location.href.replace(/\/[^/]*$/, '/');
+            const bundleUrl = base + 'tt-bundle.jsdos';
 
-        Dos(container).run('tt-bundle.jsdos').then(() => {
-            setStatus('Running Typing Tutor IV…');
-        }).catch(e => {
-            setStatus('⚠️ Error: ' + (e.message || 'unknown'));
-            console.error(e);
-        });
+            setStatus('Connecting to server…');
+
+            // 1. First verify the bundle is accessible
+            try {
+                const resp = await fetch(bundleUrl);
+                if (!resp.ok) throw new Error('HTTP ' + resp.status);
+                setStatus('Bundle OK (' + resp.headers.get('content-length') + ' bytes), starting DOSBox…');
+            } catch (e) {
+                setStatus('⚠️ Bundle not found at: ' + bundleUrl);
+                console.error('Fetch failed:', e);
+                return;
+            }
+
+            // 2. Launch js-dos with the bundle
+            try {
+                Dos(container, {
+                    url: bundleUrl,
+                    onEvent: (event) => {
+                        if (event === 'emulator-ready') {
+                            setStatus('Running Typing Tutor IV…');
+                        } else if (event === 'emulator-error') {
+                            setStatus('⚠️ Emulator error');
+                        }
+                    },
+                });
+            } catch (e) {
+                setStatus('⚠️ ' + e.message);
+                console.error(e);
+            }
+        }
+
+        start();
     </script>
 </body>
 </html>
