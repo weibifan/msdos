@@ -4,36 +4,26 @@ This directory contains an in-browser demo of **Typing Tutor IV** powered by [js
 
 ## How to run
 
-### Option 1: Local server (recommended)
+**Online (GitHub Pages):**  
+https://weibifan.github.io/msdos/web-demo/
 
+**Locally:**  
 ```bash
 npx serve web-demo/
 # or
 python -m http.server 8080 -d web-demo/
 ```
-
-Then open http://localhost:8080 in your browser.
-
-### Option 2: Open directly
-
-Open `index.html` in your browser (may not work due to CORS on some browsers).
+Then open http://localhost:8080.
 
 ## Files
 
 | File | Description |
 |------|-------------|
 | `index.html` | Demo page with embedded js-dos emulator |
-| `tt-bundle.jsdos` | js-dos bundle (TT.EXE + config) |
+| `TT.EXE` | Typing Tutor IV executable |
+| `TT.HLP` | Help file |
+| `TT.HIS` | History/scores file |
 
 ## How it works
 
-The `.jsdos` file is a standard ZIP archive containing:
-
-```
-.jsdos/dosbox.conf   — DOSBox configuration with autoexec to launch TT.EXE
-TT.EXE               — Typing Tutor IV executable
-TT.HLP               — Help file
-TT.HIS               — History/scores file
-```
-
-The HTML page loads the [js-dos](https://js-dos.com/) library from CDN and launches the bundle.
+The page uses js-dos `initFs` + `dosboxConf` to pre-load the program files and auto-start TT.EXE — no `.jsdos` bundle needed.

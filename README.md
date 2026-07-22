@@ -80,7 +80,9 @@ msdos/
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
 ├── web-demo/                                # Online DOS demo (js-dos)
 │   ├── index.html                          #   Typing Tutor IV in browser
-│   └── tt-bundle.jsdos                     #   js-dos bundle
+│   ├── TT.EXE                              #   Typing Tutor IV program
+│   ├── TT.HLP                              #   Help file
+│   └── TT.HIS                              #   History/scores
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
 │
 ├── c and c++/                              # C/C++ development tools

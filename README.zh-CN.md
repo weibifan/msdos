@@ -79,7 +79,9 @@ msdos/
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 安装盘
 ├── web-demo/                                # 在线 DOS 演示（js-dos）
 │   ├── index.html                          #   Typing Tutor IV 浏览器版
-│   └── tt-bundle.jsdos                     #   js-dos 程序包
+│   ├── TT.EXE                              #   Typing Tutor IV 程序
+│   ├── TT.HLP                              #   帮助文件
+│   └── TT.HIS                              #   成绩记录
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0（含 WPS）+ CCED 6.0
 │
 ├── c and c++/                              # C/C++ 开发工具
