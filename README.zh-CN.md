@@ -111,6 +111,9 @@ dosbox -conf dosbox.conf
 
 输入 `EXIT` 退出 DOSBox。
 
+> ![Typing Tutor IV 在 DOSBox 中运行](tools/TT/screenshot.png)
+> *Typing Tutor IV — 本仓库收录的经典 DOS 打字教学程序。*
+
 ---
 
 ### 方式二：QEMU（轻量级）

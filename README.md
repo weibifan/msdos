@@ -127,6 +127,9 @@ This automatically mounts the repository, sets up PATH, and configures memory (E
 
 Type `EXIT` to quit DOSBox.
 
+> ![Typing Tutor IV running in DOSBox](tools/TT/screenshot.png)
+> *Typing Tutor IV — a classic DOS typing tutor included in this collection.*
+
 ---
 
 ### Option 2: QEMU (Lightweight)
