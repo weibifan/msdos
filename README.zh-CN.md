@@ -79,23 +79,42 @@ msdos/
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 安装盘
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0（含 WPS）+ CCED 6.0
 │
-├── Turbo C 2.01 (5.25-360k)/              # Turbo C 2.01 开发环境
-│   ├── Disk1 - Install - Help.img         #   安装与帮助（360KB）
-│   ├── Disk2 - Integrated Development Environment.img  #   集成开发环境
-│   ├── Disk3 - Command Line - Utilities.img #   命令行工具
-│   ├── Disk4 - Libraries.img              #   库文件
-│   ├── Disk5 - Header Files - Libraries.img #   头文件
-│   └── Disk6 - Examples - BGI - Misc.img  #   示例与图形
-│
-└── Turbo C++ 3.0/                         # Turbo C++ 3.0 开发环境
-    └── Turbo C++ 3.0.zip                  #   完整包
+├── c and c++/                              # C/C++ 开发工具
+│   ├── README.md                          #   说明文档
+│   ├── Turbo C 2.01 (5.25-360k).zip       #   Turbo C 2.01 — 合并自 6 张软盘镜像
+│   └── Turbo C++ 3.0.zip                  #   Turbo C++ 3.0 — 完整包
 ```
 
 ---
 
 ## 🚀 快速开始
 
-### 方式一：QEMU（轻量级）
+### 方式一：DOSBox（跨平台，推荐）🎯
+
+**一键启动** — 安装 [DOSBox](https://www.dosbox.com/) 后，在仓库根目录运行：
+
+```bash
+dosbox -conf dosbox.conf
+```
+
+这将自动挂载仓库目录、配置 PATH 路径，并预设好内存（EMS/XMS）、声卡（Sound Blaster 16）和 VGA（SVGA S3），无需任何手动配置。
+
+**DOSBox 内常用命令：**
+| 命令 | 说明 |
+|------|------|
+| `C:\` | 仓库根目录（默认已进入） |
+| `tools\` | 实用工具（ARJ、PKZIP、PC Tools 等） |
+| `boot-disk\` | 启动盘镜像 |
+| `assembly\` | 汇编工具（MASM、TASM、NASM） |
+| `games\` | 经典 DOS 游戏 |
+| `TC` | 启动 Turbo C 2.01（位于 `c and c++\`） |
+| `TCC` | 启动 Turbo C++ 3.0 |
+
+输入 `EXIT` 退出 DOSBox。
+
+---
+
+### 方式二：QEMU（轻量级）
 
 ```bash
 cd ms-dos-in-qemu
@@ -105,26 +124,11 @@ qemu-system-x86_64 -m 64 -drive file=myimage.img,format=raw
 
 详见 [QEMU 指南](ms-dos-in-qemu/README.md)。
 
-### 方式二：VMware Workstation
+### 方式三：VMware Workstation
 
 1. 解压 `ms-dos-in-vmware/ms-dos-vmware-5.5.zip`
 2. 用 **VMware Workstation 5.x** 或更高版本打开 `.vmx` 文件
 3. 开机运行
-
-### 方式三：DOSBox（跨平台）
-
-```bash
-mount c .
-c:
-boot-disk\ms-dos-622.img
-```
-
-或在 DOSBox 中运行：
-
-```bash
-imgmount a boot-disk/ms-dos-622.img -t floppy
-boot a:
-```
 
 ### 方式四：物理机 / 真实硬件
 
@@ -169,8 +173,8 @@ hd-copy.exe boot-disk/ms-dos-622.img
 
 | 目录 | 说明 |
 |-----------|-------------|
-| `Turbo C 2.01 (5.25-360k)/` | Turbo C 2.01 的 6 张磁盘镜像（每张 360KB）— Borland 出品的经典 MS-DOS C 语言编译器 |
-| `Turbo C++ 3.0/` | 完整的 Turbo C++ 3.0 包 — Borland 面向对象的 DOS C++ IDE |
+| `Turbo C 2.01 (5.25-360k).zip`（位于 `c and c++/`） | Turbo C 2.01 — 6 张 360KB 5.25 寸磁盘镜像，合并为一个 zip 文件 |
+| `Turbo C++ 3.0.zip`（位于 `c and c++/`） | 完整的 Turbo C++ 3.0 包 — Borland 面向对象的 DOS C++ IDE |
 
 ### 汇编开发工具
 

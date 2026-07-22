@@ -83,7 +83,7 @@ msdos/
 │
 ├── c and c++/                              # C/C++ development tools
 │   ├── README.md                          #   Documentation
-│   ├── Turbo C 2.01 (5.25-360k).zip       #   Turbo C 2.01 — 6 disk images (360KB each)
+│   ├── Turbo C 2.01 (5.25-360k).zip       #   Turbo C 2.01 — consolidated from 6 disk images
 │   └── Turbo C++ 3.0.zip                  #   Turbo C++ 3.0 — complete package
 │
 ├── assembly/                              # Assembly development tools
@@ -105,7 +105,32 @@ msdos/
 
 ## 🚀 Quick Start
 
-### Option 1: QEMU (Lightweight)
+### Option 1: DOSBox (Cross-Platform, Recommended) 🎯
+
+**One-click launch** — install [DOSBox](https://www.dosbox.com/), then:
+
+```bash
+dosbox -conf dosbox.conf
+```
+
+This automatically mounts the repository, sets up PATH, and configures memory (EMS/XMS), sound (Sound Blaster 16), and VGA (SVGA S3) for an optimal retro experience.
+
+**Quick commands inside DOSBox:**
+| Command | What it does |
+|---------|-------------|
+| `C:\` | Repository root (already there) |
+| `tools\` | Browse utility tools (ARJ, PKZIP, PC Tools) |
+| `boot-disk\` | Browse boot disk images |
+| `assembly\` | Assembly tools (MASM, TASM, NASM) |
+| `games\` | Classic DOS games |
+| `TC` | Start Turbo C 2.01 (run from `c and c++\`) |
+| `TCC` | Start Turbo C++ 3.0 |
+
+Type `EXIT` to quit DOSBox.
+
+---
+
+### Option 2: QEMU (Lightweight)
 
 ```bash
 cd ms-dos-in-qemu
@@ -115,26 +140,11 @@ qemu-system-x86_64 -m 64 -drive file=myimage.img,format=raw
 
 See the [QEMU guide](ms-dos-in-qemu/README.md) for details.
 
-### Option 2: VMware Workstation
+### Option 3: VMware Workstation
 
 1. Extract `ms-dos-in-vmware/ms-dos-vmware-5.5.zip`
 2. Open the `.vmx` file with **VMware Workstation 5.x** or later
 3. Power on
-
-### Option 3: DOSBox (Cross-Platform)
-
-```bash
-mount c .
-c:
-boot-disk\ms-dos-622.img
-```
-
-Or run from within DOSBox:
-
-```bash
-imgmount a boot-disk/ms-dos-622.img -t floppy
-boot a:
-```
 
 ### Option 4: Physical Machine / Real Hardware
 
