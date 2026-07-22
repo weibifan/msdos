@@ -119,7 +119,7 @@ C:\> cd assembly      → 汇编开发工具目录
 > ![Typing Tutor IV 在 DOSBox 中运行](tools/TT/screenshot.png)
 > *Typing Tutor IV — 本仓库收录的经典 DOS 打字教学程序。*
 
-> **▶️ [在浏览器中运行](web-demo/index.html)** — 通过 [js-dos](https://js-dos.com/) 在线体验 Typing Tutor IV（本地打开 `web-demo/index.html`，或 `npx serve web-demo` 启动服务）。
+> **▶️ [在浏览器中运行](https://weibifan.github.io/msdos/web-demo/)** — 通过 [js-dos](https://js-dos.com/) 在线体验 Typing Tutor IV。
 
 ---
 
