@@ -99,17 +99,17 @@ dosbox -conf dosbox.conf
 
 这将自动挂载仓库目录、配置 PATH 路径，并预设好内存（EMS/XMS）、声卡（Sound Blaster 16）和 VGA（SVGA S3），无需任何手动配置。
 
-**DOSBox 内常用命令：**
-| 命令 | 说明 |
-|------|------|
-| `C:\` | 仓库根目录（默认已进入） |
-| `tools\` | 实用工具（ARJ、PKZIP、PC Tools 等） |
-| `boot-disk\` | 启动盘镜像 |
-| `assembly\` | 汇编工具（MASM、TASM、NASM） |
-| `games\` | 经典 DOS 游戏 |
-| `TT` | 启动 Typing Tutor IV（打字教学程序） |
+**进入 DOSBox 后**，你位于仓库根目录 `C:\`。以下是一个操作示例：
 
-输入 `EXIT` 退出 DOSBox。
+```dos
+C:\> dir              → 查看当前目录文件
+C:\> cd tools\TT      → 进入 Typing Tutor IV 目录
+C:\TOOLS\TT> TT       → 启动打字教学程序
+C:\> cd games         → 浏览经典 DOS 游戏
+C:\> cd assembly      → 汇编开发工具目录
+```
+
+任何时候输入 `EXIT` 即可退出 DOSBox。
 
 > ![Typing Tutor IV 在 DOSBox 中运行](tools/TT/screenshot.png)
 > *Typing Tutor IV — 本仓库收录的经典 DOS 打字教学程序。*

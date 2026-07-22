@@ -115,17 +115,17 @@ dosbox -conf dosbox.conf
 
 This automatically mounts the repository, sets up PATH, and configures memory (EMS/XMS), sound (Sound Blaster 16), and VGA (SVGA S3) for an optimal retro experience.
 
-**Quick commands inside DOSBox:**
-| Command | What it does |
-|---------|-------------|
-| `C:\` | Repository root (already there) |
-| `tools\` | Browse utility tools (ARJ, PKZIP, PC Tools) |
-| `boot-disk\` | Browse boot disk images |
-| `assembly\` | Assembly tools (MASM, TASM, NASM) |
-| `games\` | Classic DOS games |
-| `TT` | Start Typing Tutor IV (typing practice program) |
+**Inside DOSBox**, you start at the repository root `C:\`. To explore:
 
-Type `EXIT` to quit DOSBox.
+```dos
+C:\> dir              → List files in current directory
+C:\> cd tools\TT      → Enter Typing Tutor IV directory
+C:\TOOLS\TT> TT       → Start the typing tutor program
+C:\> cd games         → Browse classic DOS games
+C:\> cd assembly      → Assembly development tools
+```
+
+Type `EXIT` at any time to quit DOSBox.
 
 > ![Typing Tutor IV running in DOSBox](tools/TT/screenshot.png)
 > *Typing Tutor IV — a classic DOS typing tutor included in this collection.*
