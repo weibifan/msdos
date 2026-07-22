@@ -107,8 +107,7 @@ dosbox -conf dosbox.conf
 | `boot-disk\` | 启动盘镜像 |
 | `assembly\` | 汇编工具（MASM、TASM、NASM） |
 | `games\` | 经典 DOS 游戏 |
-| `TC` | 启动 Turbo C 2.01（位于 `c and c++\`） |
-| `TCC` | 启动 Turbo C++ 3.0 |
+| `TT` | 启动 Typing Tutor IV（打字教学程序） |
 
 输入 `EXIT` 退出 DOSBox。
 

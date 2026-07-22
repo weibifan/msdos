@@ -123,8 +123,7 @@ This automatically mounts the repository, sets up PATH, and configures memory (E
 | `boot-disk\` | Browse boot disk images |
 | `assembly\` | Assembly tools (MASM, TASM, NASM) |
 | `games\` | Classic DOS games |
-| `TC` | Start Turbo C 2.01 (run from `c and c++\`) |
-| `TCC` | Start Turbo C++ 3.0 |
+| `TT` | Start Typing Tutor IV (typing practice program) |
 
 Type `EXIT` to quit DOSBox.
 
