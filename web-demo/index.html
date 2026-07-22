@@ -117,26 +117,14 @@
             const base = window.location.href.replace(/\/[^/]*$/, '/');
             const bundleUrl = base + 'tt-bundle.jsdos';
 
-            setStatus('Connecting to server…');
+            setStatus('Loading DOSBox…');
 
-            // 1. First verify the bundle is accessible
-            try {
-                const resp = await fetch(bundleUrl);
-                if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                setStatus('Bundle OK (' + resp.headers.get('content-length') + ' bytes), starting DOSBox…');
-            } catch (e) {
-                setStatus('⚠️ Bundle not found at: ' + bundleUrl);
-                console.error('Fetch failed:', e);
-                return;
-            }
-
-            // 2. Launch js-dos with the bundle
             try {
                 Dos(container, {
                     url: bundleUrl,
                     onEvent: (event) => {
                         if (event === 'emulator-ready') {
-                            setStatus('Running Typing Tutor IV…');
+                            setStatus('Ready — type TT and press Enter');
                         } else if (event === 'emulator-error') {
                             setStatus('⚠️ Emulator error');
                         }
