@@ -8,8 +8,11 @@
 > 保存个人计算的基础——MS-DOS 环境、工具、启动盘和历史资源。
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/weibifan/msdos?style=flat&logo=github)]()
+[![Last Commit](https://img.shields.io/github/last-commit/weibifan/msdos)]()
 [![Platform](https://img.shields.io/badge/platform-MS--DOS%206.22-lightgrey)]()
 [![Maintenance](https://img.shields.io/badge/maintained%3F-yes-green.svg)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 
 ---
 
@@ -168,6 +171,24 @@ hd-copy.exe boot-disk/ms-dos-622.img
 |-----------|-------------|
 | `Turbo C 2.01 (5.25-360k)/` | Turbo C 2.01 的 6 张磁盘镜像（每张 360KB）— Borland 出品的经典 MS-DOS C 语言编译器 |
 | `Turbo C++ 3.0/` | 完整的 Turbo C++ 3.0 包 — Borland 面向对象的 DOS C++ IDE |
+
+### 汇编开发工具
+
+| 工具 | 说明 |
+|------|-------------|
+| `assembly/MASM.EXE` | Microsoft Macro Assembler — 官方 x86 汇编器 |
+| `assembly/LINK.EXE` | Microsoft Linker — 链接目标文件为可执行文件 |
+| `assembly/debug.exe` | MS-DOS DEBUG — 内置调试器，用于检查可执行文件 |
+| `assembly/masm611.zip` | MASM 6.11 — 微软完整汇编器包 |
+| `assembly/tasm31.zip` | Turbo Assembler v3.1 — Borland 高速 x86 汇编器 |
+| `assembly/nasm098p.zip` | NASM v0.98p — 可移植的 Netwide Assembler |
+
+### 其他实用工具
+
+| 文件 | 说明 |
+|------|-------------|
+| `others/UltraISO-9.7.6.3860-CN.zip` | UltraISO v9.7.6（中文版）— CD/DVD 映像编辑与制作工具 |
+| `others/WinImage11-cn.zip` | WinImage v11（中文版）— 软盘和硬盘映像实用工具 |
 
 ### 原始源代码
 

@@ -8,8 +8,11 @@
 > Preserving the foundations of personal computing — MS-DOS environments, tools, boot disks, and historical resources.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/weibifan/msdos?style=flat&logo=github)]()
+[![Last Commit](https://img.shields.io/github/last-commit/weibifan/msdos)]()
 [![Platform](https://img.shields.io/badge/platform-MS--DOS%206.22-lightgrey)]()
 [![Maintenance](https://img.shields.io/badge/maintained%3F-yes-green.svg)]()
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)]()
 
 ---
 
@@ -23,6 +26,8 @@ This repository is a curated collection of **MS-DOS resources**, including:
 - **VM images** — Pre-configured virtual machines for [QEMU](ms-dos-in-qemu/README.md) and [VMware](ms-dos-in-vmware/README.md)
 - **MS-DOS 6.0 source code** — For historical and educational reference
 - **Retro Windows** — Windows 1.0 and Chinese PWIN 3.2 installation disks
+- **Assembly tools** — MASM, TASM, NASM, LINK, DEBUG for x86 assembly development
+- **Other utilities** — UltraISO and WinImage for disk image management
 
 ---
 
@@ -76,16 +81,24 @@ msdos/
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
 │
-├── Turbo C 2.01 (5.25-360k)/              # Turbo C 2.01 development environment
-│   ├── Disk1 - Install - Help.img         #   Installation & help (360KB)
-│   ├── Disk2 - Integrated Development Environment.img  #   IDE
-│   ├── Disk3 - Command Line - Utilities.img #   Command line tools
-│   ├── Disk4 - Libraries.img              #   Libraries
-│   ├── Disk5 - Header Files - Libraries.img #   Header files
-│   └── Disk6 - Examples - BGI - Misc.img  #   Examples & graphics
+├── c and c++/                              # C/C++ development tools
+│   ├── README.md                          #   Documentation
+│   ├── Turbo C 2.01 (5.25-360k).zip       #   Turbo C 2.01 — 6 disk images (360KB each)
+│   └── Turbo C++ 3.0.zip                  #   Turbo C++ 3.0 — complete package
 │
-└── Turbo C++ 3.0/                         # Turbo C++ 3.0 development environment
-    └── Turbo C++ 3.0.zip                  #   Complete package
+├── assembly/                              # Assembly development tools
+│   ├── README.md                          #   Documentation
+│   ├── MASM.EXE                           #   Microsoft Macro Assembler
+│   ├── LINK.EXE                           #   Microsoft Linker
+│   ├── debug.exe                          #   MS-DOS DEBUG debugger
+│   ├── masm611.zip                        #   MASM 6.11 package
+│   ├── tasm31.zip                         #   Turbo Assembler v3.1
+│   └── nasm098p.zip                       #   NASM v0.98p
+│
+├── others/                                # Other utilities
+│   ├── README.md                          #   Documentation
+│   ├── UltraISO-9.7.6.3860-CN.zip         #   UltraISO disk image editor
+│   └── WinImage11-cn.zip                  #   WinImage disk image utility
 ```
 
 ---
@@ -162,12 +175,30 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | `chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
 | `UCDOS-7.0-WPS-CCED-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
 
-### Turbo C / C++ Development Tools
+### C / C++ Development Tools
 
-| Directory | Description |
-|-----------|-------------|
-| `Turbo C 2.01 (5.25-360k)/` | 6 disk images (360 KB each) of Turbo C 2.01 — the classic MS-DOS C compiler by Borland |
-| `Turbo C++ 3.0/` | Complete Turbo C++ 3.0 package — Borland's object-oriented C++ IDE for DOS |
+| File | Description |
+|------|-------------|
+| `c and c++/Turbo C 2.01 (5.25-360k).zip` | Turbo C 2.01 — 6 disk images (360 KB each) of the classic MS-DOS C compiler by Borland |
+| `c and c++/Turbo C++ 3.0.zip` | Complete Turbo C++ 3.0 package — Borland's object-oriented C++ IDE for DOS |
+
+### Assembly Development Tools
+
+| Tool | Description |
+|------|-------------|
+| `assembly/MASM.EXE` | Microsoft Macro Assembler — the official x86 assembler |
+| `assembly/LINK.EXE` | Microsoft Linker — links object files into executables |
+| `assembly/debug.exe` | MS-DOS DEBUG — built-in debugger for inspecting executables |
+| `assembly/masm611.zip` | MASM 6.11 — complete assembler package from Microsoft |
+| `assembly/tasm31.zip` | Turbo Assembler v3.1 — Borland's high-speed x86 assembler |
+| `assembly/nasm098p.zip` | NASM v0.98p — portable Netwide Assembler |
+
+### Other Utilities
+
+| File | Description |
+|------|-------------|
+| `others/UltraISO-9.7.6.3860-CN.zip` | UltraISO v9.7.6 (Chinese) — CD/DVD image editor and creator |
+| `others/WinImage11-cn.zip` | WinImage v11 (Chinese) — floppy and hard disk image utility |
 
 ### Original Source Code
 
