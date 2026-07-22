@@ -121,19 +121,7 @@
             try {
                 Dos(container, {
                     wdosboxUrl: 'https://cdn.jsdelivr.net/npm/js-dos@8.4.1/dist/emulators/wdosbox.js',
-                    dosboxConf: [
-                        '[autoexec]',
-                        '@echo off',
-                        'cls',
-                        'echo.',
-                        'echo MS-DOS Legacy Collection - Typing Tutor IV',
-                        'echo.',
-                        'echo Files are on C: drive',
-                        'echo.',
-                        'C:',
-                        'TT.EXE',
-                        'exit',
-                    ].join('\n'),
+                    dosboxConf: '@echo MS-DOS Legacy Collection ready',
                     initFs: [
                         { path: 'TT.EXE', contents: new Uint8Array(exe) },
                         { path: 'TT.HLP', contents: new Uint8Array(hlp) },
@@ -141,13 +129,13 @@
                     ],
                     onEvent: (event, ci) => {
                         if (event === 'emulator-ready') {
-                            setStatus('Running Typing Tutor IV…');
-                            setInstr('✅ Emulator ready — TT.EXE should start automatically');
+                            setStatus('Ready — type C: then TT at DOS prompt');
+                            setInstr('✅ DOSBox is running. Type <kbd>C:</kbd> then <kbd>TT</kbd>');
                         } else if (event === 'ci-ready') {
                             setStatus('Ready');
                         } else if (event === 'emulator-error') {
                             setStatus('⚠️ Emulator error');
-                            setInstr('❌ Emulator error occurred');
+                            setInstr('❌ Emulator error');
                         }
                     },
                 });
