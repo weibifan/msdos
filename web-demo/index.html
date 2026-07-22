@@ -109,6 +109,10 @@
         const container = document.getElementById('dos-container');
         const statusEl = document.getElementById('status');
 
+        function setStatus(msg) {
+            statusEl.textContent = msg;
+        }
+
         setStatus('Loading DOSBox…');
 
         try {
