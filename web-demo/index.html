@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Tutor IV — Online DOS Demo</title>
-    <link rel="stylesheet" href="https://v8.js-dos.com/latest/js-dos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/js-dos@8.4.1/dist/js-dos.css">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <script src="https://v8.js-dos.com/latest/js-dos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-dos@8.4.1/dist/js-dos.js"></script>
     <script>
         const container = document.getElementById('dos-container');
         const statusEl = document.getElementById('status');
@@ -120,6 +120,7 @@
 
             try {
                 Dos(container, {
+                    wdosboxUrl: 'https://cdn.jsdelivr.net/npm/js-dos@8.4.1/dist/emulators/wdosbox.js',
                     dosboxConf: [
                         '[autoexec]',
                         '@echo off',
