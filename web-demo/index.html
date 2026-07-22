@@ -17,25 +17,14 @@
             min-height: 100vh;
             padding: 30px 15px;
         }
-        .container {
-            max-width: 720px;
-            width: 100%;
-            text-align: center;
-        }
-        h1 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
+        .container { max-width: 720px; width: 100%; text-align: center; }
+        h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
         .subtitle {
             color: #8b949e;
             font-size: 0.9rem;
             margin-bottom: 20px;
         }
-        .subtitle a {
-            color: #58a6ff;
-            text-decoration: none;
-        }
+        .subtitle a { color: #58a6ff; text-decoration: none; }
         .subtitle a:hover { text-decoration: underline; }
         #dos-container {
             width: 100%;
@@ -80,12 +69,6 @@
             font-size: 0.78rem;
             font-family: monospace;
         }
-        .instructions code {
-            background: #21262d;
-            border-radius: 3px;
-            padding: 1px 5px;
-            font-size: 0.82rem;
-        }
         .footer {
             margin-top: 20px;
             font-size: 0.78rem;
@@ -106,7 +89,7 @@
         <div id="dos-container"></div>
 
         <div class="status-bar">
-            <span id="status">Loading emulator…</span>
+            <span id="status">Starting…</span>
             <span class="badge">MS-DOS</span>
         </div>
 
@@ -138,83 +121,47 @@
             statusEl.textContent = msg;
         }
 
-        async function start() {
-            try {
-                setStatus('Downloading program files…');
+        setStatus('Starting DOSBox…');
 
-                // Fetch TT binary files from the same directory
-                const [exeData, hlpData, hisData] = await Promise.all([
-                    fetch('TT.EXE').then(r => {
-                        if (!r.ok) throw new Error('TT.EXE not found (HTTP ' + r.status + ')');
-                        return r.arrayBuffer();
-                    }),
-                    fetch('TT.HLP').then(r => {
-                        if (!r.ok) throw new Error('TT.HLP not found');
-                        return r.arrayBuffer();
-                    }),
-                    fetch('TT.HIS').then(r => {
-                        if (!r.ok) throw new Error('TT.HIS not found');
-                        return r.arrayBuffer();
-                    }),
-                ]);
-
-                setStatus('Starting DOSBox…');
-
-                // Start emulator with pre-loaded files
-                Dos(container, {
-                    dosboxConf: [
-                        '[sdl]',
-                        'fullscreen=false',
-                        'autolock=true',
-                        '[dosbox]',
-                        'machine=svga_s3',
-                        'memsize=16',
-                        '[cpu]',
-                        'core=auto',
-                        'cycles=auto',
-                        '[render]',
-                        'aspect=true',
-                        'scaling=auto',
-                        '[dos]',
-                        'xms=true',
-                        'ems=true',
-                        'umb=true',
-                        '[autoexec]',
-                        '@echo off',
-                        'cls',
-                        'echo.',
-                        'echo  ============================================',
-                        'echo     Typing Tutor IV',
-                        'echo     MS-DOS Legacy Collection',
-                        'echo  ============================================',
-                        'echo.',
-                        'TT.EXE',
-                        'exit',
-                    ].join('\n'),
-                    initFs: [
-                        { path: 'TT.EXE', contents: new Uint8Array(exeData) },
-                        { path: 'TT.HLP', contents: new Uint8Array(hlpData) },
-                        { path: 'TT.HIS', contents: new Uint8Array(hisData) },
-                    ],
-                    onEvent: (event, args) => {
-                        if (event === 'emulator-ready') {
-                            setStatus('Running Typing Tutor IV…');
-                        } else if (event === 'ci-ready') {
-                            setStatus('Ready');
-                        } else if (event === 'emulator-error') {
-                            setStatus('⚠️ Error: ' + (args?.message || 'unknown'));
-                        }
-                    },
-                });
-
-                setStatus('Loading…');
-            } catch (e) {
-                setStatus('⚠️ ' + e.message);
-                console.error(e);
-            }
-        }
-
-        start();
+        Dos(container, {
+            dosboxConf: [
+                '[sdl]',
+                'fullscreen=false',
+                'autolock=true',
+                '[dosbox]',
+                'machine=svga_s3',
+                'memsize=16',
+                '[cpu]',
+                'core=auto',
+                'cycles=max',
+                '[render]',
+                'aspect=true',
+                'scaling=auto',
+                '[dos]',
+                'xms=true',
+                'ems=true',
+                'umb=true',
+                '[autoexec]',
+                '@echo off',
+                'cls',
+                'mount c .',
+                'c:',
+                'echo.',
+                'echo  ============================================',
+                'echo     MS-DOS Legacy Collection',
+                'echo  ============================================',
+                'echo.',
+                'TT.EXE',
+                'exit',
+            ].join('\n'),
+            onEvent: (event, args) => {
+                if (event === 'emulator-ready') {
+                    setStatus('Running Typing Tutor IV…');
+                } else if (event === 'emulator-error') {
+                    setStatus('⚠️ Error: ' + (args?.message || 'unknown'));
+                }
+            },
+        });
     </script>
 </body>
 </html>
