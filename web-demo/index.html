@@ -21,7 +21,6 @@
         h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
         .subtitle { color: #8b949e; font-size: 0.9rem; margin-bottom: 20px; }
         .subtitle a { color: #58a6ff; text-decoration: none; }
-        .subtitle a:hover { text-decoration: underline; }
         #dos-container {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -40,7 +39,6 @@
         }
         #status { color: #58a6ff; }
         .badge {
-            display: inline-block;
             background: #21262d;
             border: 1px solid #30363d;
             border-radius: 6px;
@@ -62,12 +60,10 @@
             border: 1px solid #30363d;
             border-radius: 4px;
             padding: 1px 6px;
-            font-size: 0.78rem;
             font-family: monospace;
         }
         .footer { margin-top: 20px; font-size: 0.78rem; color: #484f58; }
         .footer a { color: #58a6ff; text-decoration: none; }
-        .footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -77,30 +73,16 @@
             A classic DOS typing tutor — part of the
             <a href="https://github.com/weibifan/msdos" target="_blank">MS-DOS Legacy Collection</a>
         </p>
-
         <div id="dos-container"></div>
-
         <div class="status-bar">
             <span id="status">Loading DOSBox…</span>
             <span class="badge">MS-DOS</span>
         </div>
-
-        <div class="instructions">
-            <strong>🎮 How to play</strong><br>
-            Typing Tutor IV teaches you to type with all ten fingers.
-            Follow the on-screen prompts, type the displayed letters,
-            and track your speed &amp; accuracy.
-            <br><br>
-            <strong>⌨️ Controls</strong><br>
-            • Type the letter shown on screen<br>
-            • <kbd>Esc</kbd> — return to main menu<br>
-            • <kbd>F1</kbd> — help<br>
-            • <kbd>Ctrl</kbd>+<kbd>F9</kbd> — exit DOSBox (if needed)
+        <div class="instructions" id="instructions-box">
+            <strong>⏳</strong> 初始化中……
         </div>
-
         <div class="footer">
-            Powered by <a href="https://js-dos.com" target="_blank">js-dos</a> ·
-            <a href="https://github.com/weibifan/msdos/tree/master/web-demo" target="_blank">View source</a>
+            Powered by <a href="https://js-dos.com" target="_blank">js-dos</a>
         </div>
     </div>
 
@@ -108,31 +90,69 @@
     <script>
         const container = document.getElementById('dos-container');
         const statusEl = document.getElementById('status');
+        const instrEl = document.getElementById('instructions-box');
 
-        function setStatus(msg) {
-            statusEl.textContent = msg;
-        }
+        function setStatus(msg) { statusEl.textContent = msg; }
+        function setInstr(html) { instrEl.innerHTML = html; }
 
         async function start() {
-            const base = window.location.href.replace(/\/[^/]*$/, '/');
-            const bundleUrl = base + 'tt-bundle-v2.jsdos';
+            // Step 1: Fetch all 3 binary files from same directory
+            setStatus('Downloading TT files…');
+            setInstr('Fetching TT.EXE, TT.HLP, TT.HIS from server…');
 
-            setStatus('Loading DOSBox…');
+            let exe, hlp, his;
+            try {
+                [exe, hlp, his] = await Promise.all([
+                    fetch('TT.EXE').then(r => { if (!r.ok) throw new Error('TT.EXE HTTP ' + r.status); return r.arrayBuffer(); }),
+                    fetch('TT.HLP').then(r => { if (!r.ok) throw new Error('TT.HLP HTTP ' + r.status); return r.arrayBuffer(); }),
+                    fetch('TT.HIS').then(r => { if (!r.ok) throw new Error('TT.HIS HTTP ' + r.status); return r.arrayBuffer(); }),
+                ]);
+                setInstr('✅ Files loaded (' + exe.byteLength + ' + ' + hlp.byteLength + ' + ' + his.byteLength + ' bytes)');
+            } catch (e) {
+                setStatus('⚠️ Download failed');
+                setInstr('❌ ' + e.message);
+                return;
+            }
+
+            // Step 2: Start DOSBox + inject files via initFs
+            setStatus('Starting DOSBox…');
+            setInstr('Injecting files into virtual C: drive…');
 
             try {
                 Dos(container, {
-                    url: bundleUrl,
-                    onEvent: (event) => {
+                    dosboxConf: [
+                        '[autoexec]',
+                        '@echo off',
+                        'cls',
+                        'echo.',
+                        'echo MS-DOS Legacy Collection - Typing Tutor IV',
+                        'echo.',
+                        'echo Files are on C: drive',
+                        'echo.',
+                        'C:',
+                        'TT.EXE',
+                        'exit',
+                    ].join('\n'),
+                    initFs: [
+                        { path: 'TT.EXE', contents: new Uint8Array(exe) },
+                        { path: 'TT.HLP', contents: new Uint8Array(hlp) },
+                        { path: 'TT.HIS', contents: new Uint8Array(his) },
+                    ],
+                    onEvent: (event, ci) => {
                         if (event === 'emulator-ready') {
-                            setStatus('Ready — type TT and press Enter');
+                            setStatus('Running Typing Tutor IV…');
+                            setInstr('✅ Emulator ready — TT.EXE should start automatically');
+                        } else if (event === 'ci-ready') {
+                            setStatus('Ready');
                         } else if (event === 'emulator-error') {
                             setStatus('⚠️ Emulator error');
+                            setInstr('❌ Emulator error occurred');
                         }
                     },
                 });
             } catch (e) {
                 setStatus('⚠️ ' + e.message);
-                console.error(e);
+                setInstr('❌ ' + e.message);
             }
         }
 
