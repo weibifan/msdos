@@ -26,4 +26,4 @@ Then open http://localhost:8080.
 
 ## How it works
 
-The page uses js-dos `initFs` + `dosboxConf` to pre-load the program files and auto-start TT.EXE — no `.jsdos` bundle needed.
+The HTML loads js-dos from CDN, mounts the current directory as `C:\` via `mount c .`, and auto-runs `TT.EXE` through `dosboxConf`.
