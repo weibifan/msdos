@@ -115,7 +115,7 @@
 
         async function start() {
             const base = window.location.href.replace(/\/[^/]*$/, '/');
-            const bundleUrl = base + 'tt-bundle.jsdos';
+            const bundleUrl = base + 'tt-bundle.jsdos?v=' + Date.now();
 
             setStatus('Loading DOSBox…');
 
