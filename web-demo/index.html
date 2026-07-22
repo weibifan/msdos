@@ -119,23 +119,18 @@
             setInstr('Injecting files into virtual C: drive…');
 
             try {
+                // Try WITHOUT initFs first — just boot plain DOS
                 Dos(container, {
                     wdosboxUrl: 'https://cdn.jsdelivr.net/npm/js-dos@8.4.1/dist/emulators/wdosbox.js',
-                    dosboxConf: '@echo MS-DOS Legacy Collection ready',
-                    initFs: [
-                        { path: 'TT.EXE', contents: new Uint8Array(exe) },
-                        { path: 'TT.HLP', contents: new Uint8Array(hlp) },
-                        { path: 'TT.HIS', contents: new Uint8Array(his) },
-                    ],
                     onEvent: (event, ci) => {
                         if (event === 'emulator-ready') {
-                            setStatus('Ready — type C: then TT at DOS prompt');
-                            setInstr('✅ DOSBox is running. Type <kbd>C:</kbd> then <kbd>TT</kbd>');
+                            setStatus('✅ DOSBox ready');
+                            setInstr('Bare DOSBox booted successfully');
                         } else if (event === 'ci-ready') {
                             setStatus('Ready');
                         } else if (event === 'emulator-error') {
-                            setStatus('⚠️ Emulator error');
-                            setInstr('❌ Emulator error');
+                            setStatus('⚠️ Error');
+                            setInstr('❌ ' + (ci?.message || 'unknown error'));
                         }
                     },
                 });
