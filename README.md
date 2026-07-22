@@ -134,7 +134,7 @@ Type `EXIT` at any time to quit DOSBox.
 > ![Typing Tutor IV running in DOSBox](tools/TT/screenshot.png)
 > *Typing Tutor IV — a classic DOS typing tutor included in this collection.*
 
-> **▶️ [Try it in your browser](web-demo/index.html)** — run Typing Tutor IV online via [js-dos](https://js-dos.com/) (open `web-demo/index.html` locally, or serve with `npx serve web-demo`).
+> **▶️ [Try it in your browser](https://weibifan.github.io/msdos/web-demo/)** — run Typing Tutor IV online via [js-dos](https://js-dos.com/).
 
 ---
 
