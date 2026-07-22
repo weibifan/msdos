@@ -89,7 +89,7 @@
         <div id="dos-container"></div>
 
         <div class="status-bar">
-            <span id="status">Starting…</span>
+            <span id="status">Downloading program…</span>
             <span class="badge">MS-DOS</span>
         </div>
 
@@ -121,47 +121,61 @@
             statusEl.textContent = msg;
         }
 
-        setStatus('Starting DOSBox…');
+        async function start() {
+            try {
+                setStatus('Downloading program files…');
 
-        Dos(container, {
-            dosboxConf: [
-                '[sdl]',
-                'fullscreen=false',
-                'autolock=true',
-                '[dosbox]',
-                'machine=svga_s3',
-                'memsize=16',
-                '[cpu]',
-                'core=auto',
-                'cycles=max',
-                '[render]',
-                'aspect=true',
-                'scaling=auto',
-                '[dos]',
-                'xms=true',
-                'ems=true',
-                'umb=true',
-                '[autoexec]',
-                '@echo off',
-                'cls',
-                'mount c .',
-                'c:',
-                'echo.',
-                'echo  ============================================',
-                'echo     MS-DOS Legacy Collection',
-                'echo  ============================================',
-                'echo.',
-                'TT.EXE',
-                'exit',
-            ].join('\n'),
-            onEvent: (event, args) => {
-                if (event === 'emulator-ready') {
-                    setStatus('Running Typing Tutor IV…');
-                } else if (event === 'emulator-error') {
-                    setStatus('⚠️ Error: ' + (args?.message || 'unknown'));
-                }
-            },
-        });
+                // Fetch TT binary files
+                const [exe, hlp, his] = await Promise.all([
+                    fetch('TT.EXE').then(r => { if (!r.ok) throw new Error('TT.EXE not found'); return r.arrayBuffer(); }),
+                    fetch('TT.HLP').then(r => { if (!r.ok) throw new Error('TT.HLP not found'); return r.arrayBuffer(); }),
+                    fetch('TT.HIS').then(r => { if (!r.ok) throw new Error('TT.HIS not found'); return r.arrayBuffer(); }),
+                ]);
+
+                setStatus('Starting DOSBox…');
+
+                const config = [
+                    '[sdl]', 'fullscreen=false', 'autolock=true',
+                    '[dosbox]', 'machine=svga_s3', 'memsize=16',
+                    '[cpu]', 'core=auto', 'cycles=max',
+                    '[render]', 'aspect=true',
+                    '[dos]', 'xms=true', 'ems=true', 'umb=true',
+                    '[autoexec]',
+                    '@echo off',
+                    'cls',
+                    'echo.',
+                    'echo  ============================================',
+                    'echo     MS-DOS Legacy Collection',
+                    'echo     Typing Tutor IV',
+                    'echo  ============================================',
+                    'echo.',
+                    'TT.EXE',
+                    'exit',
+                ].join('\n');
+
+                Dos(container, {
+                    dosboxConf: config,
+                    initFs: [
+                        { path: 'TT.EXE', contents: new Uint8Array(exe) },
+                        { path: 'TT.HLP', contents: new Uint8Array(hlp) },
+                        { path: 'TT.HIS', contents: new Uint8Array(his) },
+                    ],
+                    onEvent: (event, args) => {
+                        if (event === 'emulator-ready') {
+                            setStatus('Running Typing Tutor IV…');
+                        } else if (event === 'emulator-error') {
+                            setStatus('⚠️ Error: ' + (args?.message || 'unknown'));
+                            console.error('js-dos error:', args);
+                        }
+                    },
+                });
+            } catch (e) {
+                setStatus('⚠️ ' + e.message);
+                console.error(e);
+            }
+        }
+
+        start();
     </script>
 </body>
 </html>
