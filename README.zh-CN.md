@@ -77,6 +77,9 @@ msdos/
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 源代码（教育用途）
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2（中文 Windows 3.2）
 ├── windows-1.0-setup-disk.zip             # Windows 1.0 安装盘
+├── web-demo/                                # 在线 DOS 演示（js-dos）
+│   ├── index.html                          #   Typing Tutor IV 浏览器版
+│   └── tt-bundle.jsdos                     #   js-dos 程序包
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0（含 WPS）+ CCED 6.0
 │
 ├── c and c++/                              # C/C++ 开发工具
@@ -113,6 +116,8 @@ C:\> cd assembly      → 汇编开发工具目录
 
 > ![Typing Tutor IV 在 DOSBox 中运行](tools/TT/screenshot.png)
 > *Typing Tutor IV — 本仓库收录的经典 DOS 打字教学程序。*
+
+> **▶️ [在浏览器中运行](web-demo/index.html)** — 通过 [js-dos](https://js-dos.com/) 在线体验 Typing Tutor IV（本地打开 `web-demo/index.html`，或 `npx serve web-demo` 启动服务）。
 
 ---
 

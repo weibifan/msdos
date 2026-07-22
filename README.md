@@ -78,7 +78,9 @@ msdos/
 │
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
 ├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
-├── windows-1.0-setup-disk.zip             # Windows 1.0 installation disk
+├── web-demo/                                # Online DOS demo (js-dos)
+│   ├── index.html                          #   Typing Tutor IV in browser
+│   └── tt-bundle.jsdos                     #   js-dos bundle
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
 │
 ├── c and c++/                              # C/C++ development tools
@@ -129,6 +131,8 @@ Type `EXIT` at any time to quit DOSBox.
 
 > ![Typing Tutor IV running in DOSBox](tools/TT/screenshot.png)
 > *Typing Tutor IV — a classic DOS typing tutor included in this collection.*
+
+> **▶️ [Try it in your browser](web-demo/index.html)** — run Typing Tutor IV online via [js-dos](https://js-dos.com/) (open `web-demo/index.html` locally, or serve with `npx serve web-demo`).
 
 ---
 
