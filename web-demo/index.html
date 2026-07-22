@@ -19,11 +19,7 @@
         }
         .container { max-width: 720px; width: 100%; text-align: center; }
         h1 { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
-        .subtitle {
-            color: #8b949e;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
-        }
+        .subtitle { color: #8b949e; font-size: 0.9rem; margin-bottom: 20px; }
         .subtitle a { color: #58a6ff; text-decoration: none; }
         .subtitle a:hover { text-decoration: underline; }
         #dos-container {
@@ -69,11 +65,7 @@
             font-size: 0.78rem;
             font-family: monospace;
         }
-        .footer {
-            margin-top: 20px;
-            font-size: 0.78rem;
-            color: #484f58;
-        }
+        .footer { margin-top: 20px; font-size: 0.78rem; color: #484f58; }
         .footer a { color: #58a6ff; text-decoration: none; }
         .footer a:hover { text-decoration: underline; }
     </style>
@@ -89,7 +81,7 @@
         <div id="dos-container"></div>
 
         <div class="status-bar">
-            <span id="status">Downloading program…</span>
+            <span id="status">Loading DOSBox…</span>
             <span class="badge">MS-DOS</span>
         </div>
 
@@ -117,65 +109,25 @@
         const container = document.getElementById('dos-container');
         const statusEl = document.getElementById('status');
 
-        function setStatus(msg) {
-            statusEl.textContent = msg;
+        setStatus('Loading DOSBox…');
+
+        try {
+            Dos(container, {
+                url: 'tt-bundle.jsdos',
+                onEvent: (event, ci) => {
+                    if (event === 'emulator-ready') {
+                        setStatus('Running Typing Tutor IV…');
+                    } else if (event === 'ci-ready') {
+                        setStatus('Ready');
+                    } else if (event === 'emulator-error') {
+                        setStatus('⚠️ Error');
+                        console.error('js-dos error:', ci);
+                    }
+                },
+            });
+        } catch (e) {
+            setStatus('⚠️ ' + e.message);
         }
-
-        async function start() {
-            try {
-                setStatus('Downloading program files…');
-
-                // Fetch TT binary files
-                const [exe, hlp, his] = await Promise.all([
-                    fetch('TT.EXE').then(r => { if (!r.ok) throw new Error('TT.EXE not found'); return r.arrayBuffer(); }),
-                    fetch('TT.HLP').then(r => { if (!r.ok) throw new Error('TT.HLP not found'); return r.arrayBuffer(); }),
-                    fetch('TT.HIS').then(r => { if (!r.ok) throw new Error('TT.HIS not found'); return r.arrayBuffer(); }),
-                ]);
-
-                setStatus('Starting DOSBox…');
-
-                const config = [
-                    '[sdl]', 'fullscreen=false', 'autolock=true',
-                    '[dosbox]', 'machine=svga_s3', 'memsize=16',
-                    '[cpu]', 'core=auto', 'cycles=max',
-                    '[render]', 'aspect=true',
-                    '[dos]', 'xms=true', 'ems=true', 'umb=true',
-                    '[autoexec]',
-                    '@echo off',
-                    'cls',
-                    'echo.',
-                    'echo  ============================================',
-                    'echo     MS-DOS Legacy Collection',
-                    'echo     Typing Tutor IV',
-                    'echo  ============================================',
-                    'echo.',
-                    'TT.EXE',
-                    'exit',
-                ].join('\n');
-
-                Dos(container, {
-                    dosboxConf: config,
-                    initFs: [
-                        { path: 'TT.EXE', contents: new Uint8Array(exe) },
-                        { path: 'TT.HLP', contents: new Uint8Array(hlp) },
-                        { path: 'TT.HIS', contents: new Uint8Array(his) },
-                    ],
-                    onEvent: (event, args) => {
-                        if (event === 'emulator-ready') {
-                            setStatus('Running Typing Tutor IV…');
-                        } else if (event === 'emulator-error') {
-                            setStatus('⚠️ Error: ' + (args?.message || 'unknown'));
-                            console.error('js-dos error:', args);
-                        }
-                    },
-                });
-            } catch (e) {
-                setStatus('⚠️ ' + e.message);
-                console.error(e);
-            }
-        }
-
-        start();
     </script>
 </body>
 </html>
