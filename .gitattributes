@@ -1,0 +1,4 @@
+UCDOS-7.0-WPS-CCED-6.0-setup.iso filter=lfs diff=lfs merge=lfs -text
+ms-dos-6.22/MS-DOS[[:space:]]6.22.iso filter=lfs diff=lfs merge=lfs -text
+ms-dos-6.22/DOS622SC.zip filter=lfs diff=lfs merge=lfs -text
+ms-dos-622.gho filter=lfs diff=lfs merge=lfs -text
