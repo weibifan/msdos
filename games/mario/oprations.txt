@@ -1,0 +1,1 @@
+During the game, you can walk with [Left] and [Right] and jump with [Alt] . Hold [Ctrl] down to run faster and jump further. Fire with [Space] (you can use [Up] or [Down] to aim while firing). Press [Down] at the end of a level to go down into the pipe. Finally, to quit the game, press [Esc] .

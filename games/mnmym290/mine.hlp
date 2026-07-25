@@ -1,0 +1,398 @@
+||
+  Program: Mine Mayhem
+  File:    mine.hlp
+  Date:    February & March, 1997
+           25 November
+           1 & 4 January, 2001
+           15 & 16 December, 2006
+
+  Help file for Mine Mayhem v2.90.
+
+  Copyright 2006 Jason Hood.
+
+
+|Contents|
+
+\1 Contents \0
+\U&135
+   #Introduction#
+
+   #Command Line#
+
+   #Game Menu#
+   #Options Menu#
+   #Help Menu#
+
+   #Configuration Files#
+
+   #Acknowledgements#
+
+   #References#
+
+   #Contact#
+\u&001
+
+
+|Introduction|
+
+\1 Introduction \0
+
+Mine Mayhem is a DOS variant of \2#Minesweeper#\0 (such as comes with Windows), styled after CheatMine.
+
+The main differences between Mine Mayhem and Minesweeper are:
+
+    the left mouse button will open the tile \4immediately\0 (which also means the "Oh" face had to go);
+
+    the time is measured in milliseconds (refer to \2#Command Line#\0);
+
+    custom games are limited only by resolution and can be remembered;
+
+    right clicking the face button, or pressing 'P', will \4pause\0 or restart the game;
+
+    right clicking when the game is over will start a new game;
+
+    clearing around will indicate too many marks with spaces and too few marks with mines;
+
+    F12 will save the game as a (true-colour) bitmap.
+
+
+|Minesweeper|
+
+\1 Minesweeper \0
+
+You are presented with a minefield, containing a number of mines (indicated by the counter on the left).  Your job is to open the tiles that don't contain mines (the counter on the right) and to mark tiles that do.  You should do this as quickly as possible (the timer in the centre).
+Open a tile by clicking on it with the left mouse button.  This will tell you how many mines surround that tile.  If there are none then the surrounding tiles will open automatically.
+When you know a tile contains a mine, click on it with the right mouse button.
+If a tile's count equals the number of mines marked around it then you can "clear-around" that tile by clicking it again with the left button.  This will open all tiles around it.  If one of the mines was marked wrong then you will be dead.  Similarly, if the number of unknown tiles plus the marks around a tile equals the tile's count, clicking it again with the right button will mark all the unknown tiles.
+
+On the left side of the board you will see the board's dimensions (width x height); the right side contains the board's \2#difficulty#\0.  When the game has finished, the left side will display the board's \2#\HTimes\h3BV\H/s\h#\0 (and the ratio of clicks to 3BV) and the right the 3BV/s.  Below these will be the right and left click efficiency (if you made any right clicks), with the overall efficiency displayed to the right of the face button.  Efficiency is the ratio of good clicks to total clicks.
+
+
+|Command Line|
+
+\1 Command Line \0
+
+Currently there is only one option: \4-t\0.
+
+Normally, the PC timer is reprogrammed to provide microsecond resolution.  If, for some reason, this disagrees with your setup, use the above option.  The normal system timer will then be used, providing a resolution of about 55ms.
+
+
+|Game Menu|
+
+\1 Game Menu \0
+\U&135
+   #Style#
+   #Type#
+   #Custom#
+   #Random#
+\u&001
+
+
+|Style|
+
+\1 Style \0
+
+ There are three different styles of minefield: squares, hexagons and hexagonal.
+
+ \4Squares\0 - same as Minesweeper.
+
+ \4Hexagons\0 - the tiles are hexagons, rather than squares.  The wrap-around option only works when the height is an even number.
+
+ \4Hexagonal\0 - hexagonal tiles, creating an hexagonal field.  There is no wrap-around at all.
+
+
+|Type|
+
+\1 Type \0
+
+ \4Clear\0 - open all the tiles and/or mark all the mines.  Whilst playing, the time's millisecond display is used to indicate the percentage completed.  Indicated by an opened minefield in the menu.
+
+ \4Cross\0 - start at the top-left corner and finish at the bottom-right.  The three surrounding tiles in each of those corners wil never have a mine.  You can only select tiles that are logically known.  The mine and space counters will display the number of right and left clicks.  Whilst playing, the millisecond display will indicate the ideal distance to the end.  Indicated by three opened tiles in the menu.
+
+
+|Custom|
+
+\1 Custom \0
+
+ This allows user-defined dimensions.  Just type in a number at the appropriate place, or use the spin buttons or up/down keys (with shift to change by ten, ctrl to change by a hundred, shift and ctrl to multiply/divide by two).
+ The maximum dimensions depend on the screen resolution and font.
+ The number of mines can never go below 1, or above 50% of the area (ie. a \2#difficulty#\0 of 2).
+
+ To keep records for a custom level it must first be saved, by clicking the "Save" button.  Click on the "Stored" button to pop-up a menu of the saved games.
+
+ The buttons on the right will select the corresponding dimensions.  The "Restore" button re-selects the dimensions that were last entered.
+
+ When playing, a right click will start a new game with the same dimensions; clicking the face will bring up the dialogue.
+
+
+|Random|
+
+\1 Random \0
+
+ You will be presented with a pop-up menu to choose the \2#difficulty#\0.
+ Random games' times are never kept.  If there is a layout you like, select and save it in the custom games (\4before\0 you complete it).
+
+ When playing, a right click will start a new game with the same dimensions; click the face for different dimensions with the same difficulty.
+
+
+|Difficulty|
+
+\1 Difficulty \0
+
+ I calculate difficulty as the number of tiles per mine:
+
+                             \UÿAreaÿ\u
+                              Mines
+
+ This means the smaller the number, the harder it is.  A difficulty of 7 means there is one mine for every seven tiles.
+
+
+|Options Menu|
+
+\1 Options Menu \0
+\U&135
+   #Times\H3BV/s\h#
+   #\HTimes\h3BV/s#
+   #Statistics#
+   #Configuration#
+   #Sound#
+\u&001
+
+
+|Times3BV/s|
+
+\1 Times \0
+
+The ten fastest times and ten highest 3BV/s are recorded, along with the speed, 3BV, rating, date and relevant options.  The bottom line shows the average for each value and the date of the first game won.  There are separate records for the perimeter starting condition and automatic marking and opening.
+
+\43BV\0 - Bechtel's Board Benchmark Value, the minimum number of left clicks required to open the board.  A 3BV of 1 (single-click game) is not recorded.
+\43BV/s\0 - 3BV per second.
+\4Speed\0 - mines per second.
+\4Rating\0 - the ratio of the 3BV to spaces, as a percentage:
+
+                             \Uÿÿÿÿ3BVÿÿÿÿ\u * 100
+                             area - mines
+
+
+If you no longer want the times you can clear them:
+
+\4Clear\0 - just clears the currently displayed times;
+\4Clear Level\0 - clears all times associated with the displayed level;
+\4Clear Type\0 - clears all times associated with the displayed type;
+\4Clear All\0 - clears all times of the current field.
+
+Before wiping the times they are saved to a text file called \4times.txt\0.
+
+\4Save Best\0 will save all the best times (including averages and games completed) of the current field to a file called \4best.txt\0.
+
+The text files use these letters to indicate the options:
+\3Starting Condition:\0
+\4N\0 - none
+\4D\0 - displace
+\4B\0 - blank
+\3Finishing Condition:\0
+\4B\0 - both (opened and marked)
+\4O\0 - all opened
+\4M\0 - all marked
+\4E\0 - either (opened or marked)
+\3Mine Counter:\0
+\4N\0 - normal
+\4R\0 - remove
+\4U\0 - update
+\3Marks Counter:\0
+\4F\0 - off (flag)
+\4C\0 - on (counter)
+\3Tracking:\0
+\4I\0 - off (individual)
+\4T\0 - on (tracking)
+\3Automatic Clearing:\0
+\4M\0 - off (manual)
+\4A\0 - on (automatic)
+\3Wrap:\0
+\4F\0 - off (flat)
+\4W\0 - on (wrap)
+
+
+|Statistics|
+
+\1 Statistics \0
+
+Display the total number of games played and the win/loss ratio; the longest winning and losing streaks and the current streak; and the averages of just the top ten (time and 3BV/s), all winning games and all games.
+
+
+|Configuration|
+
+\1 Configuration \0
+
+\3Starting Condition\0
+\4None\0 - the first tile opened may contain a mine.
+\4Displace\0 - if the tile contains a mine and is completely surrounded by unopened tiles, the mine will be moved (if possible).
+\4Blank\0 - the first tile opened will not have a mine, nor will any of its neighbours; it is then the same as "Displace".
+\4Perimeter\0 - the entire perimeter will be opened on the first click.  This is indicated on the menu game button as an unopened tile surrounded by opened tiles.
+
+\3Finishing Condition\0
+\4Opened\0 - all the tiles not containing mines have to be opened.
+\4Marked\0 - all the tiles containing mines have to be marked.
+Both checked - the first one that happens.
+Neither checked - tiles have to be opened \4and\0 marked.
+
+\3Mine Counter\0
+\4Normal\0 - the number of mines on and around the tile.
+\4Remove\0 - as above, but if it has all its marks it is made blank (or flagged).
+\4Update\0 - the number reflects the mines remaining to be marked.
+
+\3General\0
+\4Logical\0 - the mines will be positioned in such a way so guessing is not required.  Cross games are always logical; "None" and "Displace" games are never logical; "Blank" games that are logical will not displace.
+\4Marks counter\0 - instead of marking a mine with a flag, it will be marked with a mine count.  Clearing and marking around are possible.
+\4Tracking\0 - the button remains active while the mouse moves.
+\4Wrap-around\0 - the minefield represents a flattened out sphere, so that the edges are actually adjacent.  This is indicated on the menu game button by an opened minefield with arrows.
+
+\3Automatic\0
+\4Clearing\0 - opening a tile will also clear around it.
+\4Marking\0 - tiles that have been found to have mines are marked.  Indicated by a marked tile with a smiley.
+\4Opening\0 - when a tile is marked the tiles around it are cleared around.  This option makes it possible to die by marking.  Indicated by an open tile with a smiley.
+If both are checked the time is not recorded.  Indicated by an open marked tile with a smiley.
+Having neither checked is indicated by an open marked tile.
+
+\3Times Icon Legend\0
+Displays the icons the selected options would have in the times display.
+
+
+|Sound|
+
+\1 Sound \0
+
+There are currently four sounds: when a tile is opened and marked/unmarked, and when the game is won or lost.  Each sound can be individually turned on or off, or all sounds can be turned off.  I'll let you figure out which checkbox does what.
+The sounds are stored in the \4sound\0 directory, as \4.wav\0 files.  To use your own sounds, just copy it to this directory and rename it appropriately.
+
+
+|Help Menu|
+
+\1 Help Menu \0
+
+\4None\0 - no help is given.
+\4Clues\0 - displays the number of tiles that can be logically determined to the left of the face button.  The clue generator is quite good, but there may be rare times when some clues are missed.
+\4Where\0 - displays a black question mark on the above tiles.  Using this prevents records being kept.
+\4What\0 - displays a blue tick to show which tiles can be opened and a red cross to show which can be marked.  Using this prevents records being kept.
+These hints can also be selected by the keys 0 to 4.
+Where and what will only be stored as clues in the configuration.
+
+
+|Configuration Files|
+
+\1 Configuration Files \0
+
+Mine Mayhem uses one file for system setup (\2#mine.cfg#\0), another file to save the configuration (\4mine.ini\0) and three files for the times of each field (\4minesqr.tym\0, \4minehxr.tym\0, \4minehex.tym\0).
+The \4*.tym\0 files are created the first time you play the game.  They also store the custom layouts.  Simply delete these files to reset the times and erase all custom games.
+
+
+|mine.cfg|
+
+\1 mine.cfg \0
+
+This file is required by TWS (The Window System), the library I've used to create Mine Mayhem.  The following are the items of interest:
+
+\4resolution = 640x480\0
+The screen dimensions.  Should be a VESA mode.  800x600 and 1024x768 should work fine, but don't use 320x200 'cos it's too small.
+
+\4colour_depth = 8\0
+256 colours.  Any more is just overkill, any less won't look too good.  Note that saving the board as a bitmap assumes an 8-bit display.
+
+\4system_font = fonts/helv15\0
+The font used for everything except the times and custom pop-up menu.  This item is compulsory and also requires bold, itallic and bold-itallic fonts.  See \2#References#\0 for where to obtain more fonts.
+
+\4fixed_font = fonts/cour14\0
+The font used for the times and custom pop-up menu.  If it's a proportional font the times display will not look right.  (This item is not part of TWS.)
+
+\4desktop_colour = 0,51,102\0
+The background.
+
+\4system_colour = 190,230,255\0
+The window colour.
+
+\4title_bar_colour = 255,153,102\0
+The caption colour.
+
+These are normally RGB values, but if they are all multiples of 51 they become BGR values.
+
+\4highlight_colour = 25\0
+The colour that's not black.  This is a number between 0 and 255, inclusive.  (Not part of TWS.)
+
+Sound is controlled with the following items (if BLASTER environment variable is not set):
+
+\4sound_card\0
+None, SB, SBPRO, SB16.
+
+\4sound_blaster_port = 0x220\0
+\4sound_blaster_irq = 5\0
+\4sound_blaster_dma = 1\0
+\4sound_blaster_high_dma = 5\0
+
+\4mixing_rate\0
+In Hz.  The default is the maximum possible (which can slow down some computers - try using 11025).
+
+Another item you might want to use is:
+\4mouse_colour = ?,?,?\0
+The mouse cursor colour.
+
+I've included \4palette.exe\0 which displays TWS' 256-colour palette (as used by \4highlight_colour\0).  To get the RGB value multiply the components by 51.  The first twenty colours are shades of \4system_colour\0; the last twenty are user-defined.
+
+
+|Acknowledgements|
+
+\1 Acknowledgements \0
+
+D.J. Delorie and the djgpp team for taking the time and effort to create a free compiler.
+
+Malcolm Taylor for creating TWS and answering my questions (even the stupid ones).
+
+Dimitris Staikos for CheatMine and allowing me to rip the graphics out of it.
+
+Bojan Urosevic (aka Coyote / Lazy Bones) for the source to Hexagonal Minesweeper.
+
+Simon Tatham for the minesweeper solver, from his puzzles collection.
+
+Kevin Clark for the name of the game.
+
+
+|References|
+
+\1 References \0
+
+\4Mine Mayhem\0
+http://mine.adoxa.cjb.net/
+
+\4djgpp\0
+http://www.delorie.com/djgpp/
+
+\4TWS\0
+ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v2tk/mttws121.zip
+
+\4CheatMine\0
+http://www.cslab.ece.ntua.gr/~natasha/Chitmine/chitmine.html
+
+\4Professional Minesweeper (replaced Hexagonal Minesweeper)\0
+http://lazycoyote.tripod.com/ 
+
+\4Simon Tatham's Portable Puzzle Collection\0
+http://www.chiark.greenend.org.uk/~sgtatham/puzzles/
+
+\4Fonts\0
+ftp://ftp.simtel.net/pub/simtelnet/gnu/djgpp/v1tk/cbgrf103.zip
+
+
+|Contact|
+
+\1 Contact \0
+
+Jason Hood.
+
+E-mail: jadoxa@yahoo.com.au
+Web:    http://adoxa.cjb.net/
+
+Snail mail:
+
+11 Buckle Street
+North Rockhampton
+Queensland  4701
+Australia

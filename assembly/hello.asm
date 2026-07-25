@@ -1,0 +1,18 @@
+DATA SEGMENT
+    msg DB 'Hello, DOS World!$'
+DATA ENDS
+
+CODE SEGMENT
+    ASSUME CS:CODE, DS:DATA
+START:
+    MOV AX, DATA
+    MOV DS, AX
+
+    MOV DX, OFFSET msg
+    MOV AH, 09h
+    INT 21h
+
+    MOV AX, 4C00h
+    INT 21h
+CODE ENDS
+    END START

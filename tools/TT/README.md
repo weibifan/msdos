@@ -1,37 +1,42 @@
+﻿<p align="center">
+  <a href="README.md"><img alt="English" height="30" src="https://img.shields.io/badge/English-3593D2?style=for-the-badge"></a>&nbsp;
+  <a href="README.zh-CN.md"><img alt="简体中文" height="30" src="https://img.shields.io/badge/简体中文-7CB342?style=for-the-badge"></a>
+</p>
+
 # Typing Tutor IV
 
-打字教学程序，原名 **Typing Tutor IV with Letter Invaders**。
+Typing tutor program, originally **Typing Tutor IV with Letter Invaders**.
 
-- 开发商：Kriya Systems
-- 发行商：Simon & Schuster
-- 发布年份：1987
-- 平台：MS-DOS
+- Developer: Kriya Systems
+- Publisher: Simon & Schuster
+- Year: 1987
+- Platform: MS-DOS
 
-## 文件列表
+## Files
 
-| 文件 | 大小 | 说明 |
-|------|------|------|
-| TT.EXE  | 100,912 bytes | 主程序 |
-| TT.HLP  | 12,508 bytes  | 帮助文件 |
-| TT.HIS  | 18,319 bytes  | 学习历史记录 |
+| File | Size | Description |
+|------|------|-------------|
+| TT.EXE  | 100,912 bytes | Main program |
+| TT.HLP  | 12,508 bytes  | Help file |
+| TT.HIS  | 18,319 bytes  | Learning history record |
 
-## 功能
+## Features
 
-- 指法练习课程
-- 打字测试
-- 进度报告与统计图表
-- Letter Invaders 打字游戏
-- 数字小键盘练习
-- 自定义磁盘测试
-- 多人学习记录
+- Typing lessons
+- Typing tests
+- Progress reports with charts
+- Letter Invaders typing game
+- Numeric keypad practice
+- Custom disk tests
+- Multi-user learning records
 
-## 操作
+## Controls
 
-- `Esc` - 返回 / 退出当前功能
-- `Space` / `Enter` - 完成一行练习
-- `Backspace` - 纠正错误
-- 菜单导航 - 方向键选择，`Enter` 确认
+- `Esc` — Back / Exit
+- `Space` / `Enter` — Finish current line
+- `Backspace` — Correct error
+- Arrow keys + `Enter` — Menu navigation
 
-## 运行
+## Run
 
-在 DOS 环境或 DOSBox 中执行 `TT.EXE` 即可启动。
+Execute `TT.EXE` in DOS or DOSBox.

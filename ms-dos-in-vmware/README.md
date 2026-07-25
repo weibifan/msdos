@@ -1,10 +1,14 @@
+﻿<p align="center">
+  <a href="README.md"><img alt="English" height="30" src="https://img.shields.io/badge/English-3593D2?style=for-the-badge"></a>&nbsp;
+  <a href="README.zh-CN.md"><img alt="简体中文" height="30" src="https://img.shields.io/badge/简体中文-7CB342?style=for-the-badge"></a>
+</p>
 # MS-DOS 6.22 in VMware Workstation 5.5
 
 Pre-configured VMware virtual machine with MS-DOS 6.22 installed.
 
 ## Files
 
-- **ms-dos-vmware-5.5.zip** — Compressed VM package containing:
+- **ms-dos-vmware-5.5.zip** 鈥?Compressed VM package containing:
   - Virtual hard disk with MS-DOS 6.22 installed
   - VMware configuration file (.vmx)
   - BIOS and VM settings optimized for MS-DOS

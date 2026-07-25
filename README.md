@@ -1,4 +1,4 @@
-<p align="center">
+﻿<p align="center">
   <a href="README.md"><img alt="English" height="30" src="https://img.shields.io/badge/English-3593D2?style=for-the-badge"></a>&nbsp;
   <a href="README.zh-CN.md"><img alt="简体中文" height="30" src="https://img.shields.io/badge/简体中文-7CB342?style=for-the-badge"></a>
 </p>
@@ -20,14 +20,19 @@
 
 This repository is a curated collection of **MS-DOS resources**, including:
 
-- **MS-DOS 6.22** — Ghost disk image and boot disk
+- **MS-DOS 6.22** — Ghost disk image, boot disk, installation disks (ISO + floppy), and Chinese version
 - **MS-DOS 7.10** — The final DOS release (from Windows 98 SE)
 - **Boot disk images** — DOS rescue disks, Windows 9x startup disks, and utilities
 - **VM images** — Pre-configured virtual machines for [QEMU](ms-dos-in-qemu/README.md) and [VMware](ms-dos-in-vmware/README.md)
 - **MS-DOS 6.0 source code** — For historical and educational reference
 - **Retro Windows** — Windows 1.0 and Chinese PWIN 3.2 installation disks
-- **Assembly tools** — MASM, TASM, NASM, LINK, DEBUG for x86 assembly development
-- **Other utilities** — UltraISO and WinImage for disk image management
+- **Classic DOS games** — DOOM, Command & Conquer, Mario, Sokoban, Tetrix, Nibbles, and more
+- **C/C++ development tools** — Turbo C 2.01 and Turbo C++ 3.0
+- **Assembly tools** — MASM, TASM, NASM, LINK, DEBUG for x86 assembly development, plus Hello World example and one-click build script
+- **DOS utilities** — ARJ, PKZIP, PC Tools, Sea image viewer, HD-COPY, and more
+- **Online demo** — Typing Tutor IV running in browser via js-dos (v8)
+- **Sega Genesis emulation** — Genecyst DOS emulator + Road Rash ROM for in-DOSBox Genesis gameplay
+- **BIOS/UEFI bare-metal gaming** — Super Mario Bros & Contra running directly on UEFI firmware via GOP
 
 ---
 
@@ -35,9 +40,22 @@ This repository is a curated collection of **MS-DOS resources**, including:
 
 ```
 msdos/
-├── README.md                              # This file
+├── README.md                              # This file (English)
+├── README.zh-CN.md                        # Chinese translation
+├── dosbox.conf                            # One-click DOSBox configuration
 ├── ms-dos-622.gho                         # MS-DOS 6.22 Ghost system image
 ├── Ghost60.exe                            # Norton Ghost 6.0 (disk imaging tool)
+│
+├── ms-dos-6.22/                           # MS-DOS 6.22 installation media
+│   ├── README.md                          #   Documentation
+│   ├── MS-DOS 6.22.iso                    #   Full installation CD image
+│   ├── disk1.img                          #   Installation disk 1
+│   ├── disk2.img                          #   Installation disk 2
+│   ├── disk3.img                          #   Installation disk 3
+│   ├── Suppdisk.img                       #   Supplemental disk
+│   ├── DOS622SC.zip                       #   MSDN Simplified Chinese installer
+│   ├── screenshot.png                     #   Installation screenshot
+│   └── install(chinese voice).mp4         #   Chinese narration installation video
 │
 ├── boot-disk/                             # Boot disk image collection
 │   ├── README.md                          #   Documentation
@@ -50,22 +68,47 @@ msdos/
 │   └── undiskp.exe                        #   UNDISK (protected mode)
 │
 ├── tools/                                 # DOS utility tools
+│   ├── README.md                          #   Documentation
 │   ├── ARJ.EXE                            #   ARJ v2.50 archiver
 │   ├── pkzip250.exe                       #   PKZIP v2.50 archiver
 │   ├── pct9.zip                           #   PC Tools 9.0 utility suite
 │   ├── sea13.zip                          #   Sea v1.3 image viewer
+│   ├── dskimg11.zip                       #   DSKIMG — disk image utility
 │   ├── TT/                                #   Typing Tutor IV — typing tutor program
 │   └── README.md                          #   Documentation
 │
 ├── games/                                 # Classic DOS games
+│   ├── README.md                          #   Documentation
 │   ├── doom.zip                           #   DOOM (1993, id Software)
 │   ├── Command & Conquer.zip              #   C&C (1995, Westwood Studios)
-│   └── README.md                          #   Documentation
+│   ├── mario/                             #   Super Mario (DOS port)
+│   ├── nibbles/                           #   Nibbles — snake game (with C source)
+│   ├── sokoban-dos/                       #   Sokoban — puzzle game (with source)
+│   ├── tetrix/                            #   Tetrix — Tetris clone (with ASM source)
+│   ├── mnmym290/                          #   MineSweeper for DOS
+│   ├── sudoku86.zip                       #   Sudoku for DOS
+│   ├── road-rash-over-genesis/                      #   Sega Genesis emulation (in-DOSBox)
+│   └── start.bat                          #   Game launcher script
+│
+├── bios-uefi/                             # BIOS/UEFI bare-metal gaming
+│   ├── README.md                          #   Documentation
+│   ├── OVMF/                              #   OVMF UEFI firmware (from QEMU)
+│   ├── docs/                              #   Technical articles (UEFI, GOP, NES)
+│   ├── super-mario/                       #   Super Mario Bros UEFI (pre-compiled)
+│   │   ├── smb.efi                        #     Game binary
+│   │   └── startup.nsh                    #     Auto-start script
+│   ├── contra/                            #   Contra UEFI (source only)
+│   │   ├── contra-uefi/                   #     C source code
+│   │   └── build.bat                      #     EDK2 build guide
+│   ├── start-mario.bat                    #   Launch Super Mario
+│   └── start-contra.bat                   #   Launch Contra (after building)
 │
 ├── ms-dos-7.10/                           # MS-DOS 7.1 (final DOS release)
+│   ├── README.md                          #   Documentation
 │   ├── ms-dos-71-disk1.zip                #   Installation disk 1
 │   ├── ms-dos-71-disk2.zip                #   Installation disk 2
-│   └── ms-dos-71-boot.zip                 #   Boot disk
+│   ├── ms-dos-71-boot.zip                 #   Boot disk
+│   └── ms-dos-71-boot-super.zip           #   Enhanced boot disk
 │
 ├── ms-dos-in-qemu/                        # MS-DOS 6.22 in QEMU 1.2
 │   ├── README.md                          #   Setup guide
@@ -77,19 +120,31 @@ msdos/
 │   └── ms-dos-vmware-5.5.zip              #   Pre-built VMware VM
 │
 ├── ms-dos-6.0-source-code.zip             # MS-DOS 6.0 source code (educational)
-├── chinese-windows-3.2-setup-disk.zip     # PWIN 3.2 (Chinese Windows 3.2)
-├── web-demo/                                # Online DOS demo (js-dos v8)
-│   ├── README.md                           #   Documentation
-│   ├── index.html                          #   Typing Tutor IV in browser
-│   ├── tt-bundle.zip                       #   DOS bundle (TT + help + history)
-│   ├── TT.EXE / TT.HLP / TT.HIS            #   Typing Tutor IV program files
-│   └── AUTOEXEC.BAT                        #   Auto-start script
+│
+├── windows-1.x-3.x/                       # Retro Windows collection
+│   ├── README.md                          #   Documentation
+│   ├── chinese-windows-3.2-setup-disk.zip #   PWIN 3.2 (Chinese Windows 3.2)
+│   └── windows-1.0-setup-disk.zip         #   Windows 1.0 (1985)
+│
+├── web-demo/                              # Online DOS demo (js-dos v8)
+│   ├── README.md                          #   Documentation
+│   ├── index.html                         #   Typing Tutor IV in browser
+│   ├── tt-bundle.zip                      #   DOS bundle (TT + help + history)
+│   ├── AUTOEXEC.BAT                       #   Auto-start script
+│   ├── TT.EXE                             #   Typing Tutor IV program
+│   ├── TT.HLP                             #   Help file
+│   └── TT.HIS                             #   Score history
+│
 ├── UCDOS-7.0-WPS-CCED-6.0-setup.iso      # UCDOS 7.0 (with WPS) + CCED 6.0
 │
-├── c and c++/                              # C/C++ development tools
+├── turbo-c-and-c++/                       # C/C++ development tools
 │   ├── README.md                          #   Documentation
 │   ├── Turbo C 2.01 (5.25-360k).zip       #   Turbo C 2.01 — consolidated from 6 disk images
-│   └── Turbo C++ 3.0.zip                  #   Turbo C++ 3.0 — complete package
+│   ├── Turbo C++ 3.0.zip                  #   Turbo C++ 3.0 — complete package
+│   ├── TC2.zip                            #   Turbo C 2.0 alternate package
+│   ├── TC3.zip                            #   Turbo C++ 3.0 alternate package
+│   ├── TC2.0 Install Screenshot/          #   Installation screenshots
+│   └── TC++3.0 Install Screenshot/        #   Installation screenshots
 │
 ├── assembly/                              # Assembly development tools
 │   ├── README.md                          #   Documentation
@@ -98,7 +153,9 @@ msdos/
 │   ├── debug.exe                          #   MS-DOS DEBUG debugger
 │   ├── masm611.zip                        #   MASM 6.11 package
 │   ├── tasm31.zip                         #   Turbo Assembler v3.1
-│   └── nasm098p.zip                       #   NASM v0.98p
+│   ├── nasm098p.zip                       #   NASM v0.98p
+│   ├── hello.asm                          #   Hello World assembly example
+│   └── run.bat                            #   One-click DOSBox build & run script
 │
 ├── others/                                # Other utilities
 │   ├── README.md                          #   Documentation
@@ -174,6 +231,8 @@ Or deploy the Ghost image `ms-dos-622.gho` using Norton Ghost.
 The last standalone retail version of MS-DOS. Available as:
 - **Ghost image** (`ms-dos-622.gho`) — Ready-to-deploy system image
 - **Boot disk** (`boot-disk/ms-dos-622.img`) — 1.44 MB floppy image
+- **Installation media** (`ms-dos-6.22/`) — ISO, 3 install floppy disks, supplemental disk, and Simplified Chinese version (`DOS622SC.zip`)
+- **Installation video** — With Chinese narration, embedded in [ms-dos-6.22 README](ms-dos-6.22/README.md)
 
 ### MS-DOS 7.10 (1998)
 
@@ -190,16 +249,32 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 
 | File | Description |
 |------|-------------|
-| `windows-1.0-setup-disk.zip` | Microsoft Windows 1.0 (1985) — the first GUI OS |
-| `chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
+| `windows-1.x-3.x/` | **Retro Windows collection** — see [README](windows-1.x-3.x/README.md) |
+| `&nbsp;&nbsp;├── windows-1.0-setup-disk.zip` | Microsoft Windows 1.0 (1985) — the first GUI OS |
+| `&nbsp;&nbsp;├── chinese-windows-3.2-setup-disk.zip` | PWIN 3.2 — Chinese localized Windows 3.2 |
 | `UCDOS-7.0-WPS-CCED-6.0-setup.iso` | **UCDOS 7.0** (with WPS word processor) + **CCED 6.0** (Chinese character editor) — essential Chinese DOS software from the 1990s |
+
+### Classic DOS Games
+
+| Game | Description |
+|------|-------------|
+| `doom.zip` | **DOOM** (1993) — the legendary first-person shooter by id Software |
+| `Command & Conquer.zip` | **Command & Conquer** (1995) — real-time strategy classic by Westwood Studios |
+| `mario/` | **Super Mario (DOS port)** |
+| `nibbles/` | **Nibbles** — snake game with **C source code** included |
+| `tetrix/` | **Tetrix** — Tetris clone with **x86 assembly source** (`tetrix.asm`) |
+| `sokoban-dos/` | **Sokoban** — puzzle game with full **Turbo C source** and build scripts |
+| `mnmym290/` | **MineSweeper** for DOS |
+| `sudoku86.zip` | **Sudoku** puzzle game for DOS |
 
 ### C / C++ Development Tools
 
 | File | Description |
 |------|-------------|
-| `c and c++/Turbo C 2.01 (5.25-360k).zip` | Turbo C 2.01 — 6 disk images (360 KB each) of the classic MS-DOS C compiler by Borland |
-| `c and c++/Turbo C++ 3.0.zip` | Complete Turbo C++ 3.0 package — Borland's object-oriented C++ IDE for DOS |
+| `turbo-c-and-c++/Turbo C 2.01 (5.25-360k).zip` | Turbo C 2.01 — 6 disk images (360 KB each) of the classic MS-DOS C compiler by Borland |
+| `turbo-c-and-c++/Turbo C++ 3.0.zip` | Complete Turbo C++ 3.0 package — Borland's object-oriented C++ IDE for DOS |
+| `turbo-c-and-c++/TC2.zip` | Turbo C 2.0 — alternate package |
+| `turbo-c-and-c++/TC3.zip` | Turbo C++ 3.0 — alternate package |
 
 ### Assembly Development Tools
 
@@ -211,6 +286,20 @@ The final DOS version, shipped with Windows 98 SE. Introduced FAT32 and large di
 | `assembly/masm611.zip` | MASM 6.11 — complete assembler package from Microsoft |
 | `assembly/tasm31.zip` | Turbo Assembler v3.1 — Borland's high-speed x86 assembler |
 | `assembly/nasm098p.zip` | NASM v0.98p — portable Netwide Assembler |
+| `assembly/hello.asm` | Hello World assembly example with detailed Chinese comments |
+| `assembly/run.bat` | One-click DOSBox build & run script (`run.bat hello`) |
+
+### Sega Genesis Emulation
+
+Run Genesis games inside DOSBox using Genecyst, a native DOS emulator.
+
+| Directory | Description |
+|-----------|-------------|
+| `games/road-rash-over-genesis/genecyst/` | Genecyst DOS emulator (by Bloodlust Software) |
+| `games/road-rash-over-genesis/roms/roadrash.bin` | Road Rash (1991, Electronic Arts) USA ROM |
+| `games/road-rash-over-genesis/run.bat` | One-click launch script for DOSBox |
+
+See the [Sega Genesis README](games/road-rash-over-genesis/README.md) for controls and setup.
 
 ### Other Utilities
 

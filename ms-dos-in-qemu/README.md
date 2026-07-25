@@ -1,10 +1,14 @@
+﻿<p align="center">
+  <a href="README.md"><img alt="English" height="30" src="https://img.shields.io/badge/English-3593D2?style=for-the-badge"></a>&nbsp;
+  <a href="README.zh-CN.md"><img alt="简体中文" height="30" src="https://img.shields.io/badge/简体中文-7CB342?style=for-the-badge"></a>
+</p>
 # MS-DOS 6.22 in QEMU 1.2
 
 Pre-configured QEMU virtual machine with MS-DOS 6.22 installed.
 
 ## Files
 
-- **myimage.zip** — Compressed QEMU disk image containing:
+- **myimage.zip** 鈥?Compressed QEMU disk image containing:
   - Virtual hard disk with MS-DOS 6.22 installed
   - Pre-configured BIOS and VM settings
 
