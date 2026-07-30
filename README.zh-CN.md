@@ -326,6 +326,11 @@ hd-copy.exe boot-disk/ms-dos-622.img
 
 90 年代中期典型的高端 PC，可运行 MS-DOS 6.22、Windows 3.2 和早期 Windows 9x：
 
+<div align="center">
+<table>
+<tr>
+<td valign="top">
+
 | 组件 | 规格 |
 |-----------|---------------|
 | **CPU** | Intel 80486 DX2 — 66 MHz |
@@ -338,8 +343,15 @@ hd-copy.exe boot-disk/ms-dos-622.img
 | **鼠标** | Microsoft 兼容串口鼠标 |
 | **网络** | NE2000 兼容（后期添加） |
 
-> ![IBM PC](media/IBM_PC-IMG_7271.png)
-> *IBM PC — 定义了 MS-DOS 时代的标志性硬件。*
+</td>
+<td valign="top">
+<img src="media/IBM_PC-IMG_7271.png" width="500" alt="IBM PC">
+<br>
+<em>IBM PC — 定义了 MS-DOS 时代的标志性硬件。</em>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 

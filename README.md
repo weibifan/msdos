@@ -326,6 +326,11 @@ See the [Sega Genesis README](games/road-rash-over-genesis/README.md) for contro
 
 A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Windows 3.2, and early Windows 9x:
 
+<div align="center">
+<table>
+<tr>
+<td valign="top">
+
 | Component | Specification |
 |-----------|---------------|
 | **CPU** | Intel 80486 DX2 — 66 MHz |
@@ -338,8 +343,15 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 | **Mouse** | Microsoft-compatible serial mouse |
 | **Network** | NE2000 compatible (added later) |
 
-> ![IBM PC](media/IBM_PC-IMG_7271.png)
-> *IBM PC — the iconic hardware that defined the MS-DOS era.*
+</td>
+<td valign="top">
+<img src="media/IBM_PC-IMG_7271.png" width="500" alt="IBM PC">
+<br>
+<em>IBM PC — the iconic hardware that defined the MS-DOS era.</em>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 
