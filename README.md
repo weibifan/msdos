@@ -338,7 +338,7 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 | **Mouse** | Microsoft-compatible serial mouse |
 | **Network** | NE2000 compatible (added later) |
 
-> ![IBM PC](media/IBM_PC-IMG_7271.jpg)
+> ![IBM PC](media/IBM_PC-IMG_7271.png)
 > *IBM PC — the iconic hardware that defined the MS-DOS era.*
 
 ---
