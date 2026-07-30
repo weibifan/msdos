@@ -336,7 +336,7 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 | **CPU** | Intel 80486 DX2 — 66 MHz |
 | **RAM** | 8 MB |
 | **Storage** | 512 MB HDD |
-| **Graphics** | S3 Graphics Adapter with 1 MB VRAM (640×480 high color under Windows 3.2) |
+| **Graphics** | S3 Graphics Adapter with 1 MB VRAM |
 | **Floppy** | 3.5-inch floppy drive × 1 |
 | **CD-ROM** | 2× or 4× CD-ROM drive |
 | **Sound** | Sound Blaster 16 |
@@ -357,6 +357,11 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 
 ## ⚠️ System Requirements (MS-DOS 6.22)
 
+<div align="center">
+<table>
+<tr>
+<td valign="top">
+
 | Component | Minimum | Recommended |
 |-----------|---------|-------------|
 | CPU | 8088 | 486 DX or better |
@@ -365,6 +370,16 @@ A typical high-end PC from the mid-1990s, capable of running MS-DOS 6.22, Window
 | Floppy | 1.44 MB drive | — |
 | Graphics | CGA | VGA |
 | Boot media | Floppy or HDD | HDD with DOS |
+
+</td>
+<td valign="top">
+<img src="media/3.5-inch_floppy_disk2.jpg" width="300" alt="3.5-inch floppy disk">
+<br>
+<em>3.5-inch floppy disk — the standard boot media for MS-DOS.</em>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 

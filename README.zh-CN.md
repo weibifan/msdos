@@ -336,7 +336,7 @@ hd-copy.exe boot-disk/ms-dos-622.img
 | **CPU** | Intel 80486 DX2 — 66 MHz |
 | **内存** | 8 MB |
 | **存储** | 512 MB HDD |
-| **显卡** | S3 Graphics Adapter，1 MB VRAM（Windows 3.2 下 640×480 高彩色） |
+| **显卡** | S3 Graphics Adapter，1 MB VRAM |
 | **软驱** | 3.5 英寸软驱 × 1 |
 | **光驱** | 2× 或 4× CD-ROM 驱动器 |
 | **声卡** | Sound Blaster 16 |
@@ -357,6 +357,11 @@ hd-copy.exe boot-disk/ms-dos-622.img
 
 ## ⚠️ 系统要求（MS-DOS 6.22）
 
+<div align="center">
+<table>
+<tr>
+<td valign="top">
+
 | 组件 | 最低 | 推荐 |
 |-----------|---------|-------------|
 | CPU | 8088 | 486 DX 或更高 |
@@ -365,6 +370,16 @@ hd-copy.exe boot-disk/ms-dos-622.img
 | 软驱 | 1.44 MB 驱动器 | — |
 | 显卡 | CGA | VGA |
 | 启动介质 | 软盘或硬盘 | 带 DOS 的硬盘 |
+
+</td>
+<td valign="top">
+<img src="media/3.5-inch_floppy_disk2.jpg" width="300" alt="3.5-inch floppy disk">
+<br>
+<em>3.5 英寸软盘 — MS-DOS 的标准启动介质。</em>
+</td>
+</tr>
+</table>
+</div>
 
 ---
 
