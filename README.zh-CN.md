@@ -94,12 +94,9 @@ msdos/
 │   ├── README.md                          #   说明文档
 │   ├── OVMF/                              #   OVMF UEFI 固件（来自 QEMU）
 │   ├── docs/                              #   技术文档（UEFI、GOP、NES）
-│   ├── super-mario/                       #   超级马力欧兄弟 UEFI（已编译）
-│   │   ├── smb.efi                        #     游戏二进制
-│   │   └── startup.nsh                    #     自动启动脚本
-│   ├── contra/                            #   魂斗罗 UEFI（仅源码）
-│   │   ├── contra-uefi/                   #     C 源码
-│   │   └── build.bat                      #     EDK2 编译指南
+│   ├── retro-bios/                        #   经典 BIOS ROM 收藏（QEMU 演示）
+│   ├── super-mario/                       #   超级马力欧兄弟 UEFI（已编译 .efi）
+│   ├── contra/                            #   魂斗罗 UEFI（仅源码，需 EDK2 编译）
 │   ├── start-mario.bat                    #   启动超级马力欧
 │   └── start-contra.bat                   #   启动魂斗罗（需先编译）
 │

@@ -94,12 +94,9 @@ msdos/
 │   ├── README.md                          #   Documentation
 │   ├── OVMF/                              #   OVMF UEFI firmware (from QEMU)
 │   ├── docs/                              #   Technical articles (UEFI, GOP, NES)
-│   ├── super-mario/                       #   Super Mario Bros UEFI (pre-compiled)
-│   │   ├── smb.efi                        #     Game binary
-│   │   └── startup.nsh                    #     Auto-start script
-│   ├── contra/                            #   Contra UEFI (source only)
-│   │   ├── contra-uefi/                   #     C source code
-│   │   └── build.bat                      #     EDK2 build guide
+│   ├── retro-bios/                        #   Vintage BIOS ROM collection for QEMU
+│   ├── super-mario/                       #   Super Mario Bros UEFI (pre-compiled .efi)
+│   ├── contra/                            #   Contra UEFI (source only, needs EDK2 build)
 │   ├── start-mario.bat                    #   Launch Super Mario
 │   └── start-contra.bat                   #   Launch Contra (after building)
 │

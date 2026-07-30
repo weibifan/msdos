@@ -171,6 +171,26 @@ Genecyst 是一个**原生 DOS 模拟器**，无需操作系统支持——通�
 
 MAME（Multiple Arcade Machine Emulator）非常独特：它记录和模拟的是每块街机板的**精确硬件**，而非仅仅是游戏逻辑。截至 2026 年，它支持**超过 45,000 个独立 ROM set**。
 
+### RetroArch
+
+| 项目 | 详情 |
+|------|------|
+| **类型** | 前端 / 启动器（本身不是模拟器） |
+| **API** | libretro — 模拟器核心标准化接口 |
+| **平台** | Windows、macOS、Linux、Android、iOS、游戏主机等 |
+| **首发** | 2010 年 |
+| **协议** | GPLv3 |
+
+RetroArch 是一个基于 **libretro API** 构建的跨平台前端。它本身不模拟任何硬件，而是加载**核心**（动态库）来实现模拟功能。本文档中的许多独立模拟器也同时提供 libretro 核心版本（例如 Genesis Plus GX、Gambatte、ParaLLEl、mGBA、Mednafen、Nestopia UE、Snes9x、PCSX-R）。
+
+**主要特性：**
+- **统一界面** — 在所有支持的平台和核心上保持一致的操作体验
+- **着色器 / Slang** — 实时 GPU 加速的 CRT 模拟和后期处理滤镜
+- **联网对战** — 点对点在线多人游戏
+- **倒带 / Run-Ahead** — 基于存档的倒带功能和输入延迟削减
+- **成就系统** — 集成 RetroAchievements.org 的怀旧成就
+- **覆盖层** — 支持为每个核心配置触摸设备按钮覆盖层
+
 ## 模拟精度谱系
 
 ```

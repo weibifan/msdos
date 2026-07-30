@@ -171,6 +171,26 @@ Genecyst is notable for being a **DOS-native** emulator requiring no OS beyond M
 
 MAME (Multiple Arcade Machine Emulator) is unique: it documents and emulates the **exact hardware** of each arcade board, not just the game logic. As of 2026 it supports over **45,000 unique ROM sets**.
 
+### RetroArch
+
+| Aspect | Detail |
+|--------|--------|
+| **Type** | Frontend / launcher (not an emulator itself) |
+| **API** | libretro — standardized interface for emulator cores |
+| **Platforms** | Windows, macOS, Linux, Android, iOS, consoles, etc. |
+| **First release** | 2010 |
+| **License** | GPLv3 |
+
+RetroArch is a cross-platform frontend built on the **libretro API**. It does not emulate anything by itself — instead it loads **cores** (dynamic libraries) that implement emulators. Many standalone emulators in this document also ship as libretro cores (e.g. Genesis Plus GX, Gambatte, ParaLLEl, mGBA, Mednafen, Nestopia UE, Snes9x, PCSX-R).
+
+**Key features:**
+- **Unified UI** — same interface across all supported platforms and cores
+- **Shaders / Slang** — real-time GPU-accelerated CRT simulation and post-processing filters
+- **Netplay** — peer-to-peer online multiplayer
+- **Rewind / Run-Ahead** — save-states-based rewind and input lag reduction
+- **Achievements** — RetroAchievements.org integration for retro-achievements
+- **Cheevos / Overlays** — per-core button overlay support for touch devices
+
 ## Emulation Accuracy Spectrum
 
 ```

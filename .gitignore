@@ -1,2 +1,4 @@
 Thumbs.db
 .DS_Store
+# Large files — not suitable for git
+UCDOS-7.0-WPS-CCED-6.0-setup.iso
