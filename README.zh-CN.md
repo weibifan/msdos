@@ -338,7 +338,7 @@ hd-copy.exe boot-disk/ms-dos-622.img
 | **鼠标** | Microsoft 兼容串口鼠标 |
 | **网络** | NE2000 兼容（后期添加） |
 
-> ![IBM PC](media/IBM_PC-IMG_7271.png)
+> ![IBM PC](media/IBM_PC-IMG_7271.jpg)
 > *IBM PC — 定义了 MS-DOS 时代的标志性硬件。*
 
 ---
